@@ -53,6 +53,7 @@ BASE_APPS = (
     'dewey',
     'author',
     'publisher',
+    'book'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
