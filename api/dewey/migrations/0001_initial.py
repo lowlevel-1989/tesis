@@ -17,6 +17,9 @@ class Migration(migrations.Migration):
                 ('description', models.CharField(max_length=45)),
             ],
             options={
+                'ordering': ('id',),
+                'verbose_name': 'Dewey',
+                'verbose_name_plural': 'Dewey',
             },
             bases=(models.Model,),
         ),

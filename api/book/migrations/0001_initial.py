@@ -7,8 +7,8 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('dewey', '0001_initial'),
         ('author', '0001_initial'),
-        ('dewey', '0002_auto_20150210_1918'),
         ('publisher', '0001_initial'),
     ]
 

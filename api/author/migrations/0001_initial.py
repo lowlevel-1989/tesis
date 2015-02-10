@@ -14,8 +14,7 @@ class Migration(migrations.Migration):
             name='Author',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('first_name', models.CharField(max_length=30)),
-                ('last_name', models.CharField(max_length=30)),
+                ('name', models.CharField(max_length=60)),
             ],
             options={
             },
