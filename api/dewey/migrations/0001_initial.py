@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Dewey',
             fields=[
-                ('id', models.IntegerField(serialize=False, primary_key=True)),
+                ('id', models.CharField(max_length=3, serialize=False, primary_key=True)),
                 ('description', models.CharField(max_length=45)),
             ],
             options={
