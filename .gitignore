@@ -1,0 +1,6 @@
+api/corsheaders
+api/rest_framework
+api/db.sqlite3
+web/node_modules
+web/dependencies
+*.py[cod]
