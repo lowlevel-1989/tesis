@@ -1,0 +1,4 @@
+# Local development dependencies go here
+django-mockups  #Genera datos de prueba
+django-extensions #Agrega mas funcionalidad al shell de django
+ipdb

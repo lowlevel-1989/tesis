@@ -43,15 +43,22 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+)
 
+LOCAL_APPS = (
+    'django_extensions',
 )
 
 BASE_APPS = (
-
+    'dewey',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + BASE_APPS
+
+if DEBUG:
+    INSTALLED_APPS  += LOCAL_APPS
+
 ########## END APP CONFIGURATION
 
 
@@ -119,5 +126,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-STATIC_URL = '/static/'
+STATIC_URL  = '/static/'
+STATIC_ROOT = '/static/'
 ########## END GENERAL CONFIGURATION
