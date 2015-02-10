@@ -52,7 +52,7 @@ LOCAL_APPS = (
 BASE_APPS = (
     'dewey',
     'author',
-    'publicher',
+    'publisher',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
