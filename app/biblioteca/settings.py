@@ -1,35 +1,39 @@
-"""
-Django settings for biblioteca project.
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
-"""
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+
+########## SECRET CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
+# Note: This key only used for development and testing.
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'w7@)8ua@3()6bc7moyyirq9$-297&#rs9*#$@k=5qeseks2y1w'
+########## END SECRET CONFIGURATION
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
+########## DEBUG CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
+TEMPLATE_DEBUG = DEBUG
+########## END DEBUG CONFIGURATION
 
-ALLOWED_HOSTS = []
+
+########## SITE CONFIGURATION
+# Hosts/domain names that are valid for this site
+# See https://docs.djangoproject.com/en/1.7/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = ['*']
+########## END SITE CONFIGURATION
 
 
-# Application definition
-
-INSTALLED_APPS = (
+########## APP CONFIGURATION
+DJANGO_APPS = (
+    # Default Django apps:
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +42,23 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
-MIDDLEWARE_CLASSES = (
+THIRD_PARTY_APPS = (
+
+)
+
+BASE_APPS = (
+
+)
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + BASE_APPS
+########## END APP CONFIGURATION
+
+
+########## MIDDLEWARE CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
+MIDDLEWARE_CLASSES_DJANGO = (
+    # Default Django milddleware:
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -48,36 +68,56 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+MIDDLEWARE_CLASSES_THIRD_PARTY = (
+
+)
+
+MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES_DJANGO + MIDDLEWARE_CLASSES_THIRD_PARTY
+########## END MIDDLEWARE CONFIGURATION
+
+
+
+########## URL CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
 ROOT_URLCONF = 'biblioteca.urls'
+########## END URL CONFIGURATION
 
+
+########## WSGI CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'biblioteca.wsgi.application'
+########## END WSGI CONFIGURATION
 
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
+########## DATABASE CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+########## END DATABASE CONFIGURATION
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.7/topics/i18n/
 
+########## GENERAL CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = 'en-us'
 
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
 TIME_ZONE = 'UTC'
 
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
 USE_I18N = True
 
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
 USE_L10N = True
 
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
 STATIC_URL = '/static/'
+########## END GENERAL CONFIGURATION
