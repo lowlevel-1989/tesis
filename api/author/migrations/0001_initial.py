@@ -17,6 +17,8 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=60, verbose_name=b'Nombre Completo')),
             ],
             options={
+                'verbose_name': 'Autor',
+                'verbose_name_plural': 'Autores',
             },
             bases=(models.Model,),
         ),
