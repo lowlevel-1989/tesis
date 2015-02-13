@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Dewey',
             fields=[
                 ('id', models.CharField(max_length=3, serialize=False, primary_key=True)),
-                ('description', models.CharField(max_length=45, verbose_name=b'Descripcion')),
+                ('description', models.CharField(max_length=45, verbose_name=b'Descripci\xc3\xb3n')),
             ],
             options={
                 'ordering': ('id',),

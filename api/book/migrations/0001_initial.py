@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
+import book.validators
 
 
 class Migration(migrations.Migration):
@@ -21,10 +22,12 @@ class Migration(migrations.Migration):
                 ('isbn', models.CharField(max_length=13)),
                 ('pages', models.IntegerField(verbose_name=b'P\xc3\xa1ginas')),
                 ('year', models.IntegerField(verbose_name=b'A\xc3\xb1o')),
-                ('cover', models.ImageField(upload_to=b'cover', verbose_name=b'Portada')),
-                ('author', models.ManyToManyField(to='author.Author')),
+                ('public', models.BooleanField(default=False, verbose_name=b'P\xc3\xbablico')),
+                ('cover', models.ImageField(upload_to=b'cover/%Y/%m/%d', verbose_name=b'Portada')),
+                ('book_pdf', models.FileField(upload_to=b'documents/%Y/%m/%d', verbose_name=b'Libro_pdf', validators=[book.validators.validate_file_extension])),
+                ('author', models.ManyToManyField(to='author.Author', verbose_name=b'Autores')),
                 ('dewey', models.ForeignKey(to='dewey.Dewey')),
-                ('publisher', models.ForeignKey(to='publisher.Publisher')),
+                ('publisher', models.ForeignKey(verbose_name=b'Editorial', to='publisher.Publisher')),
             ],
             options={
                 'verbose_name': 'Libro',

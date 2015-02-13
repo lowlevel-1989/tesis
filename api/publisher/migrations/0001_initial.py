@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Publisher',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(max_length=30, verbose_name=b'Nombre')),
+                ('name', models.CharField(max_length=30, verbose_name=b'Editorial')),
                 ('address', models.CharField(max_length=150, verbose_name=b'Direcci\xc3\xb3n')),
                 ('city', models.CharField(max_length=60, verbose_name=b'Ciudad')),
                 ('state', models.CharField(max_length=30, verbose_name=b'Estado')),
