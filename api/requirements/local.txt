@@ -2,3 +2,5 @@
 django-mockups  #Genera datos de prueba
 django-extensions #Agrega mas funcionalidad al shell de django
 ipdb
+#Requiere sudo aptitude install graphviz libgraphviz-dev pkg-configcl
+pygraphviz #Genera imagen models ./manage.py graph_models -a -g -o my_project_visualized.png
