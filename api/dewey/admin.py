@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Dewey
+from .models        import Dewey
 
 class DeweyAdmin(admin.ModelAdmin):
 	list_display  = ('id', 'description', )

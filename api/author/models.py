@@ -4,7 +4,7 @@
 from django.db import models
 
 class Author(models.Model):
-	name = models.CharField('Nombre Completo', max_length=60)
+	name = models.CharField('Autor', max_length=60)
 
 	class Meta:
 		verbose_name		= 'Autor'

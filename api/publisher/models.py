@@ -4,7 +4,7 @@
 from django.db import models
 
 class Publisher(models.Model):
-	name    = models.CharField('Nombre',    max_length=30)
+	name    = models.CharField('Editorial',    max_length=30)
 	address = models.CharField('Dirección', max_length=150)
 	city    = models.CharField('Ciudad',    max_length=60)
 	state   = models.CharField('Estado',    max_length=30)
