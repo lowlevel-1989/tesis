@@ -43,6 +43,9 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    # DJANGO REST FRAMEWORK
+    'rest_framework',
+    'rest_framework.authtoken',
 )
 
 LOCAL_APPS = (
@@ -54,7 +57,7 @@ BASE_APPS = (
     'dewey',
     'author',
     'publisher',
-    'book'
+    'book',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -132,7 +135,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_URL  = '/static/'
 STATIC_ROOT = 'static/'
-########## END GENERAL CONFIGURATION
 
 MEDIA_URL  = '/media/'
 MEDIA_ROOT = 'media/'
+
+########## END GENERAL CONFIGURATION
+
+
+########## REST CONFIGURATION
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'PAGINATE_BY': 6,            # Default to 10
+    'PAGINATE_BY_PARAM': 'size', # Allow client to override, using `?size=xxx`.
+    'MAX_PAGINATE_BY': 10        # Maximum limit allowed when using `?size=xxx`.
+}
+########## END REST CONFIGURATION
