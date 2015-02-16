@@ -29,9 +29,14 @@ class Book(models.Model):
 		return '%s' % self.publisher.country
 
 	def portada(self):
+		if self.public:
+			link = self.book_pdf.url
+		else:
+			link = self.cover.url
+
 		return """
 			<a href="%s" target="_blank"><img src="%s" width="90" height="120" /></a>
-		""" % (self.cover.url, self.cover.url)
+		""" % (link, self.cover.url)
 
 	portada.allow_tags = True
 
