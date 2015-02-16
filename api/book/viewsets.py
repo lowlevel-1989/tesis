@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Dewey
+from .serializers import DeweySerializer
 
-# Create your views here.
+
+class DeweyViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset            = Dewey.objects.all()
+    serializer_class    = DeweySerializer

@@ -4,7 +4,8 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/', include('dewey.urls')),
+    url(r'^api/',   include('author.urls')),
+    url(r'^api/',   include('dewey.urls')),
 )
 
 if settings.DEBUG:
