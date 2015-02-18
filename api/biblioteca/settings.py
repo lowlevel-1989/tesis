@@ -46,6 +46,7 @@ THIRD_PARTY_APPS = (
     # DJANGO REST FRAMEWORK
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 )
 
 LOCAL_APPS = (
@@ -84,7 +85,9 @@ MIDDLEWARE_CLASSES_DJANGO = (
 )
 
 MIDDLEWARE_CLASSES_THIRD_PARTY = (
-
+    # framework corsheaders
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 )
 
 MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES_DJANGO + MIDDLEWARE_CLASSES_THIRD_PARTY
@@ -155,3 +158,10 @@ REST_FRAMEWORK = {
     'MAX_PAGINATE_BY': 30        # Maximum limit allowed when using `?size=xxx`.
 }
 ########## END REST CONFIGURATION
+
+########## CORS-HEADERS CONFIGURATION
+#Everyone can connect
+CORS_ORIGIN_ALLOW_ALL = True
+#Add Permitted Clients
+CORS_ORIGIN_WHITELIST = ()
+########## END CORS-HEADERS CONFIGURATION
