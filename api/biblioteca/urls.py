@@ -1,11 +1,14 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.contrib import admin
+from rest_framework.authtoken import views
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/',   include('author.urls')),
     url(r'^api/',   include('dewey.urls')),
+    url(r'^api/',   include('authentication.urls')),
+    url(r'^api/auth/$', views.obtain_auth_token), #Generate Token
 )
 
 if settings.DEBUG:

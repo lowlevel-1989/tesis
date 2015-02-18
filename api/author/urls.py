@@ -4,7 +4,7 @@ from rest_framework.routers import SimpleRouter
 from .viewsets import AuthorViewSet
 
 simpleRouter = SimpleRouter()
-simpleRouter.register(r'author',  AuthorViewSet)
+simpleRouter.register(r'authors',  AuthorViewSet)
 routerUrls = simpleRouter.urls
 
 urlpatterns = patterns('.viewsets',

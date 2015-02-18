@@ -58,6 +58,7 @@ BASE_APPS = (
     'author',
     'publisher',
     'book',
+    'authentication',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
