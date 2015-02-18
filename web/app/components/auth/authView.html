@@ -1,0 +1,10 @@
+<form data-ng-submit="logIn(username, password)">
+	<input data-ng-model="username"	placeholder="Username" required autofocus />
+	<br />
+	<input type="password" data-ng-model="password" placeholder="Password" required	/>
+	<br />
+	<button type="submit">Sign in </button>
+</form>
+<div data-ng-show="error">
+Sorry. The username and password do not match. Please try again.
+</div>
