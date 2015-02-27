@@ -1,4 +1,5 @@
 # Local development dependencies go here
+-r ../../requirements.txt
 django-mockups  #Genera datos de prueba
 django-extensions #Agrega mas funcionalidad al shell de django
 ipdb #debug el codigo ??? ipdb[TAB] en subl

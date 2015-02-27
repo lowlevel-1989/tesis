@@ -1,4 +1,3 @@
-
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -11,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w7@)8ua@3()6bc7moyyirq9$-297&#rs9*#$@k=5qeseks2y1w'
+SECRET_KEY = '81=czgs*!w@#miln65@qia^1mg!v@hnsp4er%rb5fgkd*xm%zt'
 ########## END SECRET CONFIGURATION
 
 
@@ -79,7 +78,6 @@ MIDDLEWARE_CLASSES_DJANGO = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -94,7 +92,6 @@ MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES_DJANGO + MIDDLEWARE_CLASSES_THIRD_PARTY
 ########## END MIDDLEWARE CONFIGURATION
 
 
-
 ########## URL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
 ROOT_URLCONF = 'biblioteca.urls'
@@ -105,16 +102,20 @@ ROOT_URLCONF = 'biblioteca.urls'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'biblioteca.wsgi.application'
 ########## END WSGI CONFIGURATION
+# Database
+# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 
 ########## DATABASE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 ########## END DATABASE CONFIGURATION
 
 
