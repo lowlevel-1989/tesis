@@ -1,4 +1,4 @@
-django==1.7.1
+django==1.6.10
 djangorestframework==3.0.0 #Api REST
 django-cors-headers==0.13  #Permisos CORS
 pillow
