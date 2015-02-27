@@ -7,10 +7,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/',   include('author.urls')),
-    url(r'^api/',   include('dewey.urls')),
-    url(r'^api/',   include('authentication.urls')),
-    url(r'^api/auth/$', views.obtain_auth_token), #Generate Token
+    url(r'^auth/$', views.obtain_auth_token), #Generate Token
+    url(r'^',   include('author.urls')),
+    url(r'^',   include('dewey.urls')),
+    url(r'^',   include('authentication.urls')),
 )
 
 if settings.DEBUG:
