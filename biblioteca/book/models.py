@@ -17,7 +17,7 @@ class Book(models.Model):
 	publisher = models.ForeignKey      (              Publisher,                verbose_name='Editorial'                   )
 	pages     = models.IntegerField    ( 'Páginas'                                                                         )
 	year      = models.IntegerField    ( 'Año'                                                                             )
-	cover     = models.ImageField      ( 'Portada',   upload_to='cover/%Y/%m/%d'                                           )
+	cover     = models.FileField       ( 'Portada',   upload_to='cover/%Y/%m/%d'                                           )
 	book_pdf  = models.FileField       ( 'Libro pdf', upload_to='documents/%Y/%m/%d', validators=[validate_file_extension] )
 	public    = models.BooleanField    ( 'Público',   default=False                                                        )
 
