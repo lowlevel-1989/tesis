@@ -16,3 +16,8 @@ scp -r ~/Proyectos/tesis/biblioteca usuario@formatcomtesis.com.ve:/home/usuario/
 ssh usuario@formatcomtesis.com.ve
 cd ~/django/biblioteca
 pip install -r requirements/production.txt 
+
+biblioteca/settings.py
+	line 19: DEBUG = True
+	change
+	line 19: DEBUG = False
