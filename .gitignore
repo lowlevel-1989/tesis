@@ -1,6 +1,6 @@
-api/corsheaders
-api/rest_framework
-api/db.sqlite3
+biblioteca/db.sqlite3
+biblioteca/media
+biblioteca/static
 web/node_modules
 web/dependencies
 *.py[cod]

@@ -139,10 +139,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_URL  = '/static/'
+MEDIA_URL   = '/media/'
+
+MEDIA_ROOT  = '/home2/formatco/www/media/'
 STATIC_ROOT = '/home2/formatco/www/static/'
 
-MEDIA_URL  = '/media/'
-MEDIA_ROOT = '/home2/formatco/www/media/'
+if DEBUG:
+    STATIC_ROOT = 'static/'
+    MEDIA_ROOT  = 'media/'
 
 ########## END GENERAL CONFIGURATION
 
