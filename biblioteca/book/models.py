@@ -1,13 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
 from .validators import validate_file_extension
+from .files      import FileField
 
 from django.db        import models
 from author.models    import Author
 from dewey.models     import Dewey
 from publisher.models import Publisher 
-
 
 class Book(models.Model):
 	title     = models.CharField       ( 'Titulo',               max_length=100                                            )
@@ -18,7 +17,7 @@ class Book(models.Model):
 	pages     = models.IntegerField    ( 'Páginas'                                                                         )
 	year      = models.IntegerField    ( 'Año'                                                                             )
 	cover     = models.FileField       ( 'Portada',   upload_to='cover/%Y/%m/%d'                                           )
-	book_pdf  = models.FileField       ( 'Libro pdf', upload_to='documents/%Y/%m/%d', validators=[validate_file_extension] )
+	book_pdf  =        FileField       ( 'Libro pdf', upload_to='documents/%Y/%m/%d', validators=[validate_file_extension], blank=True )
 	public    = models.BooleanField    ( 'Público',   default=False                                                        )
 
 	class Meta:
