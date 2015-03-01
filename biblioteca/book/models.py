@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from .validators import validate_file_extension
+from .validators import validate_file_extension, validate_file_image
 from .files      import FileField
 
 
@@ -18,7 +18,7 @@ class Book(models.Model):
 	publisher = models.ForeignKey      (              Publisher,                verbose_name='Editorial'                               )
 	pages     = models.IntegerField    ( 'Páginas'                                                                                     )
 	year      = models.IntegerField    ( 'Año'                                                                                         )
-	cover     = models.FileField       ( 'Portada',   upload_to='cover/%Y/%m/%d'                                                       )
+	cover     = models.FileField       ( 'Portada',   upload_to='cover/%Y/%m/%d',     validators=[validate_file_image]                 )
 	book_pdf  =        FileField       ( 'Libro pdf', upload_to='documents/%Y/%m/%d', validators=[validate_file_extension], blank=True )
 	public    = models.BooleanField    ( 'Público',   default=False                                                                    )
 
