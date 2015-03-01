@@ -1,8 +1,8 @@
 from rest_framework import viewsets
-from .models import Dewey
-from .serializers import DeweySerializer
+from .models import Publisher
+from .serializers import PublisherSerializer
 
 
-class DeweyViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset            = Dewey.objects.all()
-    serializer_class    = DeweySerializer
+class PublisherViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset            = Publisher.objects.all()
+    serializer_class    = PublisherSerializer
