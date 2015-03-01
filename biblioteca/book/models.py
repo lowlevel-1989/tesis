@@ -3,7 +3,9 @@
 from .validators import validate_file_extension
 from .files      import FileField
 
+
 from django.db        import models
+from django.conf      import settings
 from author.models    import Author
 from dewey.models     import Dewey
 from publisher.models import Publisher 
@@ -28,7 +30,7 @@ class Book(models.Model):
 		return '%s' % self.publisher.country
 
 	def portada(self):
-		if self.public:
+		if self.public and self.book_pdf.url != settings.MEDIA_URL:
 			link = self.book_pdf.url
 		else:
 			link = self.cover.url
