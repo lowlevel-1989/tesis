@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^',   include('dewey.urls'         )),
     url(r'^',   include('book.urls'          )),
     url(r'^',   include('publisher.urls'     )),
+    url(r'^',   include('thesis.urls'        )),
     url(r'^',   include('authentication.urls')),
 )
 
