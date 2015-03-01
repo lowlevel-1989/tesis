@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from .validators import validate_file_extension
+from .validators import validate_file_extension, validate_file_image
 
 
 from django.db        import models
@@ -23,7 +23,7 @@ class Thesis(models.Model):
 	author      = models.ManyToManyField (              Author,                   verbose_name='Autores'                     )
 	career      = models.ForeignKey      (              Careers,                  verbose_name='Carreras'                    )
 	year        = models.IntegerField    ( 'Año'                                                                             )
-	cover       = models.FileField       ( 'Portada',   upload_to='cover/%Y/%m/%d'                                           )
+	cover       = models.FileField       ( 'Portada',   upload_to='cover/%Y/%m/%d',     validators=[validate_file_image]     )
 	thesis_pdf  = models.FileField       ( 'Tesis pdf', upload_to='documents/%Y/%m/%d', validators=[validate_file_extension] )
 	public      = models.BooleanField    ( 'Público',   default=False                                                        )
 
