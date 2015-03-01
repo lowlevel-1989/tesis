@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^auth/$', views.obtain_auth_token), #Generate Token
     url(r'^',   include('author.urls')),
     url(r'^',   include('dewey.urls')),
+    url(r'^',   include('book.urls')),
     url(r'^',   include('authentication.urls')),
 )
 

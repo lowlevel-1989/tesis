@@ -1,8 +1,8 @@
 from rest_framework import viewsets
-from .models import Dewey
-from .serializers import DeweySerializer
+from .models import Book
+from .serializers import BookSerializer
 
 
-class DeweyViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset            = Dewey.objects.all()
-    serializer_class    = DeweySerializer
+class BookViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset            = Book.objects.all()
+    serializer_class    = BookSerializer

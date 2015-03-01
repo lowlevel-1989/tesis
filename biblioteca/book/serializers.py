@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Dewey
+from .models import Book
 
 
-class DeweySerializer(serializers.ModelSerializer):
+class BookSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Dewey
+        model = Book
