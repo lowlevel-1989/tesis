@@ -58,6 +58,7 @@ BASE_APPS = (
     'author',
     'publisher',
     'book',
+    'thesis',
     'authentication',
 )
 
