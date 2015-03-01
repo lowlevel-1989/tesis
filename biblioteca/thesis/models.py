@@ -19,13 +19,14 @@ class Careers(models.Model):
 
 
 class Thesis(models.Model):
-	title       = models.CharField       ( 'Titulo',               max_length=100                                            )
-	author      = models.ManyToManyField (              Author,                   verbose_name='Autores'                     )
-	career      = models.ForeignKey      (              Careers,                  verbose_name='Carreras'                    )
-	year        = models.IntegerField    ( 'Año'                                                                             )
-	cover       = models.FileField       ( 'Portada',   upload_to='cover/%Y/%m/%d',     validators=[validate_file_image]     )
-	thesis_pdf  = models.FileField       ( 'Tesis pdf', upload_to='documents/%Y/%m/%d', validators=[validate_file_extension] )
-	public      = models.BooleanField    ( 'Público',   default=False                                                        )
+	title        = models.CharField       ( 'Titulo',                 max_length=100                                            )
+	author       = models.ManyToManyField (                Author,                   verbose_name='Autores'                     )
+	career       = models.ForeignKey      (                Careers,                  verbose_name='Carreras'                    )
+	year         = models.IntegerField    ( 'Año'                                                                               )
+	cover        = models.FileField       ( 'Portada',     upload_to='cover/%Y/%m/%d',     validators=[validate_file_image]     )
+	thesis_pdf   = models.FileField       ( 'Tesis pdf',   upload_to='documents/%Y/%m/%d', validators=[validate_file_extension] )
+	abstract_pdf = models.FileField       ( 'Resumen pdf', upload_to='documents/%Y/%m/%d', validators=[validate_file_extension] )
+	public       = models.BooleanField    ( 'Público',     default=False                                                        )
 
 	class Meta:
 		verbose_name		= 'Tesis'
@@ -35,7 +36,7 @@ class Thesis(models.Model):
 		if self.public:
 			link = self.thesis_pdf.url
 		else:
-			link = self.cover.url
+			link = self.abstract_pdf.url
 
 		return """
 			<a href="%s" target="_blank"><img src="%s" width="90" height="120" /></a>
