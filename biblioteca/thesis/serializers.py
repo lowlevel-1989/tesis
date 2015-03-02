@@ -24,4 +24,4 @@ class ThesisSerializer(serializers.ModelSerializer):
 
 	class Meta:
 	    model  = Thesis
-	    fields = ('title', 'author', 'career', 'year', 'cover', 'abstract_pdf', 'is_public', ) 
+	    fields = ('id', 'title', 'author', 'career', 'year', 'cover', 'abstract_pdf', 'is_public', ) 
