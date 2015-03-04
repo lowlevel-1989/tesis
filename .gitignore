@@ -2,5 +2,6 @@ biblioteca/db.sqlite3
 biblioteca/media
 biblioteca/static
 web/node_modules
-web/libs
+web/assets/libs/
+web/dist
 *.py[cod]

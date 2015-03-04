@@ -31,7 +31,6 @@ var _STYLUS = 'assets/stylus/**/*.styl';
 
 //Solo las dependencias
 var _CSS = [
-    'assets/libs/mdi/materialdesignicons.css',
     'assets/libs/angular-material/angular-material.min.css'
 ];
 
@@ -41,9 +40,7 @@ var _JAVASCRIPT = [
     'assets/libs/angular/*.min.*',
     'assets/libs/angular-route/*.min.*',
 	'assets/libs/ngInfiniteScroll/build/*.min.*',
-    'assets/libs/velocity/*.min.*',
     'assets/libs/moment/min/*.min.*',
-    'assets/libs/lumx/dist/*.min.*',
     'assets/libs/angular-animate/*.min.*',
     'assets/libs/angular-aria/*.min.*',
     'assets/libs/angular-material/angular-material.min.js'
@@ -51,8 +48,7 @@ var _JAVASCRIPT = [
 
 //Todas las fuentes tanto tuyas como de dependencias
 var _FONTS = [
-    'assets/fonts/**/*',
-    'assets/libs/mdi/fonts/*'
+    'assets/fonts/**/*'
 ];
 
 //Todas las imagenes tanto tuyas como de dependencias
