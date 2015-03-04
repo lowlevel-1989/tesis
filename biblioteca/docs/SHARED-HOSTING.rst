@@ -45,3 +45,5 @@ htaccess
 		RewriteEngine on
 		RewriteRule ^cgi-bin/ - [L]
 		RewriteRule ^api/(.*)$ /cgi-bin/tesis.py/$1 [QSA,L]
+
+		Options -Indexes
