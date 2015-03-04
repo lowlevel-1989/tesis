@@ -143,9 +143,16 @@ MEDIA_URL   = '/media/'
 MEDIA_ROOT  = '/home2/formatco/www/media/'
 STATIC_ROOT = '/home2/formatco/www/static/'
 
+TEMPLATE_DIRS = (
+    'home2/formatco/www/templates/',
+)
+
 if DEBUG:
     STATIC_ROOT = 'static/'
     MEDIA_ROOT  = 'media/'
+    TEMPLATE_DIRS = (
+        '../web/templates/',
+    )
 
 ########## END GENERAL CONFIGURATION
 
