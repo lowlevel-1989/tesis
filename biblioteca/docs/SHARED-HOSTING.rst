@@ -22,6 +22,7 @@ biblioteca/settings.py
 	change
 	line 19: DEBUG = False
 
+./manage.py collectstatic
 
 touch ~/www/cgi-bin/tesis.py
 
