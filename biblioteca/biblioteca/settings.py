@@ -44,7 +44,6 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     # DJANGO REST FRAMEWORK
     'rest_framework',
-    'rest_framework.authtoken',
     'corsheaders',
 )
 
@@ -59,7 +58,6 @@ BASE_APPS = (
     'publisher',
     'book',
     'thesis',
-    'authentication',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -154,11 +152,6 @@ if DEBUG:
 
 ########## REST CONFIGURATION
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-    ),
     'PAGINATE_BY': 10,           # Default to 10
     'PAGINATE_BY_PARAM': 'size', # Allow client to override, using `?size=xxx`.
     'MAX_PAGINATE_BY': 30        # Maximum limit allowed when using `?size=xxx`.
