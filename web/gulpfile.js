@@ -31,6 +31,7 @@ var _STYLUS = 'assets/stylus/**/*.styl';
 
 //Solo las dependencias
 var _CSS = [
+    'assets/libs/mdi/css/**/*.min.*',
     'assets/libs/angular-material/angular-material.min.css'
 ];
 
@@ -48,7 +49,8 @@ var _JAVASCRIPT = [
 
 //Todas las fuentes tanto tuyas como de dependencias
 var _FONTS = [
-    'assets/fonts/**/*'
+    'assets/fonts/**/*',
+    'assets/libs/mdi/fonts/**/*'
 ];
 
 //Todas las imagenes tanto tuyas como de dependencias
@@ -117,7 +119,7 @@ gulp.task('copyImgs', function(){
 
 gulp.task('copyFonts', function(){
 	gulp.src(_FONTS)
-    .pipe(gulp.dest('dist/assets/css/fonts'));
+    .pipe(gulp.dest('dist/assets/fonts'));
 });
 
 
