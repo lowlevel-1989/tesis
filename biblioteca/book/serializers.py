@@ -13,5 +13,13 @@ class BookSerializer(serializers.ModelSerializer):
     dewey     = DeweySerializer     (many=False, read_only=True)
     publisher = PublisherSerializer (many=False, read_only=True)
 
+    is_public = serializers.SerializerMethodField()
+
+    def get_is_public(self, obj):
+        if obj.public:
+            return obj.book_pdf.url
+        return None
+
     class Meta:
         model = Book
+        fields = ('id', 'title', 'isbn', 'dewey', 'author', 'publisher', 'pages', 'year', 'cover', 'is_public', ) 
