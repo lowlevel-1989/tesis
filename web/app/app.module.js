@@ -11,7 +11,8 @@
     ];
 
     var _CONTROLLERS = [
-            'headerController'  
+            'headerController', 
+            'booksController' 
     ];
 
     var _DIRECTIVES = [
