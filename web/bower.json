@@ -1,0 +1,17 @@
+{
+  "name": "BibliotecaVirtual",
+  "version": "0.0.1",
+  "authors": [
+    "Vinicio Valbuena <formatcomvinicio@gmail.com>"
+  ],
+  "license": "FormatCom",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "angular": "~1.3.13",
+    "angular-route": "~1.3.13",
+    "ngInfiniteScroll": "~1.2.0",
+    "angular-material": "0.8.3",
+    "mdi": "0.9.22-alpha"
+  }
+}
