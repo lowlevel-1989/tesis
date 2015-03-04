@@ -23,6 +23,7 @@ biblioteca/settings.py
 	line 19: DEBUG = False
 
 ./manage.py collectstatic
+./manage.py syncdb
 
 touch ~/www/cgi-bin/tesis.py
 
