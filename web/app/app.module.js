@@ -7,12 +7,12 @@
     var _DESCRIPTION = 'Esta es la Biblioteca UJGH';
 
     var _SERVICES = [   
-            'bookService'
+            
     ];
 
     var _CONTROLLERS = [
             'headerController', 
-            'booksController' 
+            'bookController' 
     ];
 
     var _DIRECTIVES = [

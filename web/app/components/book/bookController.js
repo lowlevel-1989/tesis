@@ -1,11 +1,33 @@
 (function(){
-    angular.module('booksController', [])
+    angular.module('bookController', ['bookService'])
 
-    .controller('booksController', [ 
-    '$scope', 
-    function ($scope) {
+    .controller('bookController', [ 
+    '$scope', 'bookFactory',
+    function ($scope, bookFactory) {
         
+
+        //Scrolling
         
+        $scope.scrollVisible = false;
+        var change = false;
+        var books;
+        $scope.scrollActive = function(){
+            $scope.scrollVisible = true;
+            bookFactory.next().then(function(data){
+                console.log(data);
+                if (!change)
+                    books = data;
+                else
+                    books = books.concat(data);
+                change = true;
+                $scope.books = books;                
+                $scope.scrollVisible = false;
+            });
+        };
+
+        //Scrolling
+
+
     }]);
 
 })();

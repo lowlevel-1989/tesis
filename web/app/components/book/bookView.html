@@ -23,113 +23,25 @@
             </div>
         </div>
     </div>
-    <div flex class="container_bookslist">
-        <div layout="row" layout-wrap >
-            <div flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center center">
-                <div layout="column" class="bookslist_items">
-                    <figure>
-                        <img src="http://lorempixel.com/g/123/150/" />
-                    </figure>
-                    <div class="items_name">
-                        <strong>
-                            nombre
-                        </strong>
+    <div infinite-scroll="scrollActive()" infinite-scroll-distance="0" infinite-scroll-disabled='scrollVisible'>
+        <div flex class="container_bookslist">
+            <section layout="row" layout-wrap >
+                <article flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center center" data-ng-repeat="book in books">
+                    <div layout="column" class="bookslist_items">
+                        <figure>
+                            <img src="{{book.cover}}" />
+                        </figure>
+                        <div class="items_name">
+                            <strong>
+                                nombre
+                            </strong>
+                        </div>
+                        <div class="items_subname">
+                            subnombre
+                        </div>
                     </div>
-                    <div class="items_subname">
-                        subnombre
-                    </div>
-                </div>
-            </div>
-            <div flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center center">
-                <div layout="column" class="bookslist_items">
-                    <figure>
-                        <img src="http://lorempixel.com/g/123/150/" />
-                    </figure>
-                    <div class="items_name">
-                        <strong>
-                            nombre
-                        </strong>
-                    </div>
-                    <div class="items_subname">
-                        subnombre
-                    </div>
-                </div>
-            </div>
-            <div flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center center">
-                <div layout="column" class="bookslist_items">
-                    <figure>
-                        <img src="http://lorempixel.com/g/123/150/" />
-                    </figure>
-                    <div class="items_name">
-                        <strong>
-                            nombre
-                        </strong>
-                    </div>
-                    <div class="items_subname">
-                        subnombre
-                    </div>
-                </div>
-            </div>
-            <div flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center center">
-                <div layout="column" class="bookslist_items">
-                    <figure>
-                        <img src="http://lorempixel.com/g/123/150/" />
-                    </figure>
-                    <div class="items_name">
-                        <strong>
-                            nombre
-                        </strong>
-                    </div>
-                    <div class="items_subname">
-                        subnombre
-                    </div>
-                </div>
-            </div>
-            <div flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center center">
-                <div layout="column" class="bookslist_items">
-                    <figure>
-                        <img src="http://lorempixel.com/g/123/150/" />
-                    </figure>
-                    <div class="items_name">
-                        <strong>
-                            nombre
-                        </strong>
-                    </div>
-                    <div class="items_subname">
-                        subnombre
-                    </div>
-                </div>
-            </div>
-            <div flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center center">
-                <div layout="column" class="bookslist_items">
-                    <figure>
-                        <img src="http://lorempixel.com/g/123/150/" />
-                    </figure>
-                    <div class="items_name">
-                        <strong>
-                            nombre
-                        </strong>
-                    </div>
-                    <div class="items_subname">
-                        subnombre
-                    </div>
-                </div>
-            </div>
-            <div flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center center">
-                <div layout="column" class="bookslist_items">
-                    <figure>
-                        <img src="http://lorempixel.com/g/123/150/" />
-                    </figure>
-                    <div class="items_name">
-                        <strong>
-                            nombre
-                        </strong>
-                    </div>
-                    <div class="items_subname">
-                        subnombre
-                    </div>
-                </div>
-            </div>
+                </article>
+            </section>
         </div>
     </div>
     

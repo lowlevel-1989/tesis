@@ -9,23 +9,25 @@
             function next(){
                 
                 var page = paginador;
-                
-                if(page === null){
-                    return;
-                }
+                var flag;                
+
+
+                if(page === null)
+                    flag = true;
 
                 var deferred = $q.defer();
+                
+                if (!flag){
+                    $http({
+                        method: 'get',
+                        url: page
+                    })
 
-                $http({
-                    method: 'get',
-                    url: page
-                })
-
-                .success(function(data) {
-                    if (data.count !== 0)
+                    .success(function(data) {
                         paginador = data.next;
-                    deferred.resolve(data.results);
-                });
+                        deferred.resolve(data.results);
+                    });
+                }
 
                 return deferred.promise;
             }
