@@ -6,7 +6,7 @@
         
         $routeProvider.when('/books', {
             templateUrl: '../templates/books/booksView.min.html',
-            controller: ''
+            controller: 'booksController'
         })
         .when('/working', {
             template: ' Trabajando '

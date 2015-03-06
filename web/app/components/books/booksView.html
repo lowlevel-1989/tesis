@@ -1,25 +1,29 @@
 <div layout="column" class="books_container">
-    <div flex class="container_title">
-        LIBROS
+    <div flex class="container_title" layout layout-align="center center">
+        <div> 
+            BIBLIOTECA<strong>VIRTUAL</strong>
+        </div>
     </div>
-    <div flex class="container_search">
-        <div layout="row">
-            <div flex="10" class="search_icon" layout layout-align="end end">
-                <i class="mdi mdi-magnify"></i>
-            </div>
-            <div flex="80" flex-sm="90">
-                <div layout="column">
-                    <div flex class="search_text">
-                        <small>
-                            <em>Busque el libro que desee</em>
-                        </small>
+    <div flex>
+        <div layout="row" layout layout-align="center center">
+            <div flex="60" flex-sm="95" class="container_search">
+                <div layout="row">
+                    <div flex="90" class="search_box">
+                        <input type="text" placeholder="Ingrese su busqueda" />
                     </div>
                     <div flex>
-                        <div class="search_box">
-                            <input type="text"/>
-                        </div>
+                        <md-button class="search_boton" aria-label="searchboton" >
+                            <i class="mdi mdi-magnify icono"></i>
+                        </md-button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div flex>
+        <div layout="row" layout layout-align="center center">
+            <div flex="80" flex-sm="100" class="container_nombre">
+                <i class="mdi mdi-play icono"></i><span>LIBROS</span>
             </div>
         </div>
     </div>
