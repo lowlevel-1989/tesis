@@ -4,7 +4,6 @@
         "del": "^1.1.1",
         "gulp": "^3.8.10",
         "gulp-concat": "^2.4.2",
-        "gulp-concat-css": "^1.1.1",
         "gulp-jshint": "^1.9.2",
         "gulp-minify-css": "^0.3.11",
         "gulp-minify-html": "^0.1.8",
