@@ -1,11 +1,11 @@
 <div layout="column" class="books_container">
-    <div flex class="container_title" layout layout-align="center center">
+    <div flex class="container_title" layout layout-align="center">
         <div> 
             BIBLIOTECA<strong>VIRTUAL</strong>
         </div>
     </div>
     <div flex>
-        <div layout="row" layout layout-align="center center">
+        <div layout="row" layout layout-align="center">
             <div flex="60" flex-sm="95" class="container_search">
                 <form data-ng-submit="search()">
                     <div layout="row">
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div flex>
-        <div layout="row" layout layout-align="center center">
+        <div layout="row" layout layout-align="center">
             <div flex="80" flex-sm="100" class="container_nombre">
                 <i class="mdi mdi-play icono"></i><span>LIBROS</span>
             </div>
@@ -50,10 +50,10 @@
                         </div>
                     </div>
                 </article>
+                <div flex="100" layout layout-align="center" data-ng-show="scrollVisible">
+                    loading...
+                </div>
             </section>
-        </div>
-        <div data-ng-show="scrollVisible">
-            loading...
         </div>
     </div>
 </div>
