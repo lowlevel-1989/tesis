@@ -9,14 +9,14 @@
             <div flex="60" flex-sm="95" class="container_search">
                 <form data-ng-submit="search()">
                     <div layout="row">
-                            <div flex="90" class="search_box">
-                                <input type="text" placeholder="Ingrese su busqueda" />
-                            </div>
-                            <div flex>
-                                <md-button type="submit" class="search_boton" aria-label="searchboton" >
-                                    <i class="mdi mdi-magnify icono"></i>
-                                </md-button>
-                            </div>
+                        <div flex="90" class="search_box">
+                            <input type="text" data-ng-model="data" placeholder="Ingrese su busqueda" />
+                        </div>
+                        <div flex>
+                            <md-button type="submit" class="search_boton" aria-label="searchboton" >
+                                <i class="mdi mdi-magnify icono"></i>
+                            </md-button>
+                        </div>
                     </div>
                 </form>
             </div>

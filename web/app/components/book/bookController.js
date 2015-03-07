@@ -5,23 +5,14 @@
     '$scope', 'bookFactory',
     function ($scope, bookFactory) {
         
-
-        //Search
-
-            $scope.search = function () {
-                console.log('buscando');
-            };
-
-        //Search
-
         //Scrolling
         
         $scope.scrollVisible = false;
         var change = false;
         var books;
-        $scope.scrollActive = function(){
+        $scope.scrollActive = function(arg){
             $scope.scrollVisible = true;
-            bookFactory.next().then(function(data){
+            bookFactory.next(arg).then(function(data){
                 if (!change)
                     books = data;
                 else
@@ -35,6 +26,19 @@
         //Scrolling
 
 
+        //Search
+
+            var search;
+
+            $scope.search = function () {
+                if (search !== $scope.data){
+                    search = $scope.data;
+                    change = false;
+                    $scope.scrollActive(search);
+                }
+            };
+
+        //Search
     }]);
 
 })();
