@@ -1,7 +1,6 @@
 //Dependencias
 var browserSync = require('browser-sync');
-var concatCSS   = require('gulp-concat-css');
-var concatJS    = require('gulp-concat');
+var concat      = require('gulp-concat');
 var del         = require('del');
 var gulp        = require('gulp');
 var minifyCSS   = require('gulp-minify-css');
@@ -65,8 +64,8 @@ var _BASE = [
 //Tareas
 gulp.task('minify-css', function () {
     gulp.src(_STYLUS)
+    .pipe(concat('style.min.styl'))
     .pipe(stylus())
-    .pipe(concatCSS('style.min.css'))
     .pipe(minifyCSS())
     .pipe(gulp.dest('dist/assets/css'))
     .pipe(reload({stream: true, once: true}));
@@ -74,7 +73,7 @@ gulp.task('minify-css', function () {
 
 gulp.task('minify-js', function () {
     gulp.src(_PROYECTOJS)
-    .pipe(concatJS('main.min.js'))
+    .pipe(concat('main.min.js'))
     .pipe(minifyJS())
     .pipe(gulp.dest('dist/assets/js'))
     .pipe(reload({stream: true, once: true}));
