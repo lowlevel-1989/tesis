@@ -14,7 +14,6 @@
         $scope.scrollActive = function(){
             $scope.scrollVisible = true;
             bookFactory.next().then(function(data){
-                console.log(data);
                 if (!change)
                     books = data;
                 else
