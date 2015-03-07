@@ -10,17 +10,22 @@
         $scope.scrollVisible = false;
         var change = false;
         var books;
+        var none = false;
         $scope.scrollActive = function(arg){
-            $scope.scrollVisible = true;
-            bookFactory.next(arg).then(function(data){
-                if (!change)
-                    books = data;
-                else
-                    books = books.concat(data);
-                change = true;
-                $scope.books = books;                
-                $scope.scrollVisible = false;
-            });
+            if (!none){
+                $scope.scrollVisible = true;
+                bookFactory.next(arg).then(function(data){
+                    if (!change)
+                        books = data.results;
+                    else
+                        books = books.concat(data.results);
+                    change = true;
+                    $scope.books = books;                
+                    $scope.scrollVisible = false;
+                    if (data.next === null)
+                        none = true;
+                });
+            }
         };
 
         //Scrolling

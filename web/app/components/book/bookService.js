@@ -33,8 +33,7 @@
 
                     .success(function(data) {
                         paginador = data.next;
-                        console.log(data.results);
-                        deferred.resolve(data.results);
+                        deferred.resolve(data);
                     });
                 }
 
