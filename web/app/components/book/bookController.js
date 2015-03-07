@@ -39,6 +39,7 @@
                 if (search !== $scope.data){
                     search = $scope.data;
                     change = false;
+                    none   = false;
                     $scope.scrollActive(search);
                 }
             };
