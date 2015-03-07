@@ -6,6 +6,14 @@
     function ($scope, bookFactory) {
         
 
+        //Search
+
+            $scope.search = function () {
+                console.log('buscando');
+            };
+
+        //Search
+
         //Scrolling
         
         $scope.scrollVisible = false;

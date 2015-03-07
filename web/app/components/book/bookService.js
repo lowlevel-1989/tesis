@@ -9,7 +9,8 @@
             function next(arg){
                 
                 var page = paginador;
-                var flag, search;
+                var flag;
+                var search = '';
 
                 if(page === null)
                     flag = true;
@@ -18,9 +19,15 @@
                 
                 if (!flag){
 
+                    if (arg)
+                        search = arg;
+
                     $http({
                         method: 'get',
-                        url: page
+                        url: page,
+                        params: {
+                            "search": search
+                        }
                     })
 
                     .success(function(data) {

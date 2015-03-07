@@ -7,16 +7,18 @@
     <div flex>
         <div layout="row" layout layout-align="center center">
             <div flex="60" flex-sm="95" class="container_search">
-                <div layout="row">
-                    <div flex="90" class="search_box">
-                        <input type="text" placeholder="Ingrese su busqueda" />
+                <form data-ng-submit="search()">
+                    <div layout="row">
+                            <div flex="90" class="search_box">
+                                <input type="text" placeholder="Ingrese su busqueda" />
+                            </div>
+                            <div flex>
+                                <md-button type="submit" class="search_boton" aria-label="searchboton" >
+                                    <i class="mdi mdi-magnify icono"></i>
+                                </md-button>
+                            </div>
                     </div>
-                    <div flex>
-                        <md-button class="search_boton" aria-label="searchboton" >
-                            <i class="mdi mdi-magnify icono"></i>
-                        </md-button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
