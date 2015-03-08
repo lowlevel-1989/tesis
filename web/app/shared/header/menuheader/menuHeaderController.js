@@ -9,7 +9,6 @@
         };
 
         $scope.tabs = menuHeaderFactory.tabs;
-        console.log(1);
 
     }]);
 

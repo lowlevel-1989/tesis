@@ -4,7 +4,7 @@
     .directive('blHeader', function () {
         return {
             restrict: 'E',
-            templateUrl: '../templates/header/headerView.min.html',
+            templateUrl: '../templates/header/base/headerView.min.html',
             controller: 'headerController'
         };
     });

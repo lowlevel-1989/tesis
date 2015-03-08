@@ -4,7 +4,7 @@
     .directive('blMenuheader', function () {
         return {
             restrict: 'E',
-            templateUrl: '../templates/menuheader/menuHeaderView.min.html',
+            templateUrl: '../templates/header/menuheader/menuHeaderView.min.html',
             controller: 'menuHeaderController'
         };
     });
