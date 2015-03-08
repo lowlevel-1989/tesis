@@ -12,7 +12,8 @@
 
     var _CONTROLLERS = [
             'headerController', 
-            'bookController' 
+            'bookController',
+            'homeController'
     ];
 
     var _DIRECTIVES = [
