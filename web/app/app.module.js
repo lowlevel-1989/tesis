@@ -17,7 +17,8 @@
 
     var _DIRECTIVES = [
             'headerDirective',
-            'sidenavRightDirective'
+            'sidenavRightDirective',
+            'menuHeaderDirective'
     ];
 
     var _THIRD_PARTY_APPS = [
