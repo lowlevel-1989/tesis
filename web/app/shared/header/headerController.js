@@ -1,5 +1,5 @@
 (function(){
-    angular.module('headerController', [])
+    angular.module('headerController', ['menuHeaderDirective'])
 
     .controller('headerController', [ '$scope', '$mdSidenav', 
     function ($scope, $mdSidenav) {
