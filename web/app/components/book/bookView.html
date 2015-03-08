@@ -1,36 +1,42 @@
 <div layout="column" class="books_container">
-    <div flex class="container_title" layout layout-align="center center">
+    <div flex class="container_title" layout layout-align="center">
         <div> 
             BIBLIOTECA<strong>VIRTUAL</strong>
         </div>
     </div>
     <div flex>
-        <div layout="row" layout layout-align="center center">
+        <div layout="row" layout layout-align="center">
             <div flex="60" flex-sm="95" class="container_search">
-                <div layout="row">
-                    <div flex="90" class="search_box">
-                        <input type="text" placeholder="Ingrese su busqueda" />
+                <form data-ng-submit="search()">
+                    <div layout="row">
+                        <div flex="90" class="search_box">
+                            <input type="text" data-ng-model="data" placeholder="Ingrese su búsqueda" />
+                        </div>
+                        <div flex>
+                            <md-button type="submit" class="search_boton" aria-label="searchboton" >
+                                <i class="mdi mdi-magnify icono"></i>
+                            </md-button>
+                        </div>
                     </div>
-                    <div flex>
-                        <md-button class="search_boton" aria-label="searchboton" >
-                            <i class="mdi mdi-magnify icono"></i>
-                        </md-button>
-                    </div>
+                </form>
+                <div data-ng-show="data">Buscar: {{data}}</div>
+                <div data-ng-show="scrollVisible">
+                    loading...
                 </div>
             </div>
         </div>
     </div>
     <div flex>
-        <div layout="row" layout layout-align="center center">
+        <div layout="row" layout layout-align="center">
             <div flex="80" flex-sm="100" class="container_nombre">
                 <i class="mdi mdi-play icono"></i><span>LIBROS</span>
             </div>
         </div>
     </div>
-    <div infinite-scroll="scrollActive()" infinite-scroll-distance="0" infinite-scroll-disabled='scrollVisible'>
+    <div infinite-scroll="scrollActive()" infinite-scroll-distance="1" infinite-scroll-disabled="scrollVisible">
         <div flex class="container_bookslist">
             <section layout="row" layout-wrap >
-                <article flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center start" data-ng-repeat="book in books">
+                <article flex-gt-md="25" flex-gt-sm="33" flex-sm="100" layout layout-align="center start" data-ng-repeat="book in books">
                     <div layout="column" class="bookslist_items">
                         <figure>
                             <img src="{{book.cover}}" />
@@ -45,9 +51,10 @@
                         </div>
                     </div>
                 </article>
-                
+                <div flex="100" layout layout-align="center" data-ng-show="scrollVisible">
+                    loading...
+                </div>
             </section>
         </div>
     </div>
-    
 </div>

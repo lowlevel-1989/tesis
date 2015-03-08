@@ -7,25 +7,33 @@
             var paginador = api.url + 'books/';
 
             function next(arg){
-                
                 var page = paginador;
-                var flag, search;
+                var flag;
+                var search = '';
 
-                if(page === null)
+                if(page === null && arg === undefined)
                     flag = true;
 
                 var deferred = $q.defer();
                 
                 if (!flag){
+                    if (arg){
+                        search = arg;
+                        page   = api.url + 'books/';
+                    }else if (arg === '')
+                        page   = api.url + 'books/';
 
                     $http({
                         method: 'get',
-                        url: page
+                        url: page,
+                        params: {
+                            "search": search
+                        }
                     })
 
                     .success(function(data) {
                         paginador = data.next;
-                        deferred.resolve(data.results);
+                        deferred.resolve(data);
                     });
                 }
 
