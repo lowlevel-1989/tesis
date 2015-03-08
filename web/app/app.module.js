@@ -11,7 +11,6 @@
     ];
 
     var _CONTROLLERS = [
-            'headerController', 
             'bookController',
             'homeController'
     ];

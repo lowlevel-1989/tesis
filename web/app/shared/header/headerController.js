@@ -1,16 +1,14 @@
 (function(){
-    angular.module('headerController', ['menuHeaderService'])
+    angular.module('headerController', [])
 
-    .controller('headerController', [ '$scope', '$mdSidenav', 'menuHeaderFactory',
-    function ($scope, $mdSidenav, menuHeaderFactory) {
+    .controller('headerController', [ '$scope', '$mdSidenav', 
+    function ($scope, $mdSidenav) {
 
         $scope.toggleRight = function() {
-    		$mdSidenav('right').toggle();
-  		};
-  		
+            $mdSidenav('right').toggle();
+        };
 
-  		$scope.tabs = menuHeaderFactory.tabs;
-  		console.log($scope.tabs);
+        console.log(1);
 
     }]);
 
