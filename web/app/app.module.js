@@ -65,6 +65,7 @@
     function ($scope, PageTitle, MetaInformation) {
         $scope.PageTitle       = PageTitle;
         $scope.MetaInformation = MetaInformation;
+        $scope.loading         = true;
     }]);
 
 })();
