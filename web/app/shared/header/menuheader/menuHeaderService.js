@@ -20,11 +20,9 @@
             ];
 
             var currentTab = tabs[0].url;
-            console.log(currentTab);
 
             function onClickTab(tab) {
                 currentTab = tab.url;
-                console.log(currentTab);
             }
 
             function isActiveTab(urlTab) {
