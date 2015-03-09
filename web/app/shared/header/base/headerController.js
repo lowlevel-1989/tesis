@@ -8,6 +8,10 @@
             $mdSidenav('right').toggle();
         };
 
+        $scope.close = function() {
+            $mdSidenav('right').close();
+        };
+
     }]);
 
 })();

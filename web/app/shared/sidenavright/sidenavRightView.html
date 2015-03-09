@@ -1,12 +1,18 @@
 <md-sidenav class="md-sidenav-right md-whiteframe-z2 sidenavright" md-component-id="right">
 	<md-toolbar class="md-theme-light toolbar_sidenavright">
-		<h1 class="md-toolbar-tools">Menu</h1>
+		
 	</md-toolbar>
 	<md-content class="md-padding">
     	<ul>
-            <li>INICIO</li>
-            <li>LIBROS</li>
-            <li>TESIS</li>   
+            <a data-ng-href="#!/" data-ng-click="close()">
+            	<li >INICIO</li>
+            </a>
+            <a data-ng-href="#!/tesis" data-ng-click="close()">
+            	<li>TESIS</li>
+            </a>  
+            <a data-ng-href="#!/books" data-ng-click="close()">
+            	<li>LIBROS</li>
+            </a>
         </ul>  
 	</md-content>
 </md-sidenav>
