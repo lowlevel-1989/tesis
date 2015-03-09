@@ -9,7 +9,8 @@
         };
 
         $scope.tabs = menuHeaderFactory.tabs;
-
+        $scope.onClickTab = menuHeaderFactory.onClickTab;
+        $scope.isActiveTab = menuHeaderFactory.isActiveTab;
     }]);
 
 })();

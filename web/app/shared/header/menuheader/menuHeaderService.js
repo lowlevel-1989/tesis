@@ -4,7 +4,7 @@
 
         .factory('menuHeaderFactory', function (){
 
-           tabs=[
+            tabs=[
                 {
                     'title': 'INICIO',
                     'url': '#!/'
@@ -17,10 +17,25 @@
                     'title':'LIBROS',
                     'url': '#!/books'
                 }
-           ];
+            ];
+
+            var currentTab = tabs[0].url;
+            console.log(currentTab);
+
+            function onClickTab(tab) {
+                currentTab = tab.url;
+                console.log(currentTab);
+            }
+
+            function isActiveTab(urlTab) {
+                return urlTab == currentTab;
+            }
 
             return {
-                tabs: tabs
+                tabs: tabs,
+                onClickTab: onClickTab,
+                isActiveTab: isActiveTab
+
             };
 
         });

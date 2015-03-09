@@ -1,7 +1,7 @@
 <div class="menu">
 	<ul>
-    	<li class="tab_items" data-ng-repeat="tab in tabs">
-    		<a href="{{tab.url}}">{{tab.title}}</a>
+    	<li class="tab_items" data-ng-click="onClickTab(tab)" data-ng-repeat="tab in tabs">
+    		<a href="{{tab.url}}" data-ng-class="{menu_active_tab: isActiveTab(tab.url)}">{{tab.title}}</a>
     	</li>
     </ul> 
 </div>
