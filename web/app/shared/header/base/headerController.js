@@ -8,8 +8,6 @@
             $mdSidenav('right').toggle();
         };
 
-        console.log(1);
-
     }]);
 
 })();

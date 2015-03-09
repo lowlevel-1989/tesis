@@ -6,13 +6,16 @@
 
            tabs=[
                 {
-                    'title':'INICIO'
+                    'title': 'INICIO',
+                    'url': '#!/'
                 },
                 {
-                    'title':'TESIS'
+                    'title':'TESIS',
+                    'url': '#!/tesis'
                 },
                 {
-                    'title':'LIBROS'
+                    'title':'LIBROS',
+                    'url': '#!/books'
                 }
            ];
 

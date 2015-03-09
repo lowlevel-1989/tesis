@@ -1,5 +1,7 @@
-<div closs="menu_tab">
-	<ul >
-        <li data-ng-repeat="tab in tabs">{{tab.title}}</li>
+<div class="menu">
+	<ul>
+    	<li class="tab_items" data-ng-repeat="tab in tabs">
+    		<a href="{{tab.url}}">{{tab.title}}</a>
+    	</li>
     </ul> 
 </div>
