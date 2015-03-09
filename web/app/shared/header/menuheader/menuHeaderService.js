@@ -2,24 +2,25 @@
 
     angular.module('menuHeaderService', [])
 
-        .factory('menuHeaderFactory', function (){
+        .factory('menuHeaderFactory', ['$location', function ($location){
 
             tabs=[
                 {
                     'title': 'INICIO',
-                    'url': '#!/'
+                    'url': '/home'
                 },
                 {
                     'title':'TESIS',
-                    'url': '#!/tesis'
+                    'url': '/tesis'
                 },
                 {
                     'title':'LIBROS',
-                    'url': '#!/books'
+                    'url': '/books'
                 }
             ];
 
-            var currentTab = tabs[0].url;
+
+            var currentTab = $location.path();
 
             function onClickTab(tab) {
                 currentTab = tab.url;
@@ -36,6 +37,6 @@
 
             };
 
-        });
+        }]);
     
 })();
