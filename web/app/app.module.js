@@ -11,8 +11,8 @@
     ];
 
     var _CONTROLLERS = [
-            'headerController', 
-            'bookController' 
+            'bookController',
+            'homeController'
     ];
 
     var _DIRECTIVES = [
@@ -65,6 +65,7 @@
     function ($scope, PageTitle, MetaInformation) {
         $scope.PageTitle       = PageTitle;
         $scope.MetaInformation = MetaInformation;
+        $scope.loading         = true;
     }]);
 
 })();

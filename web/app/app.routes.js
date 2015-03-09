@@ -8,11 +8,11 @@
             templateUrl: '../templates/book/bookView.min.html',
             controller: 'bookController'
         })
-        .when('/working', {
-            template: ' Trabajando '
+        .when('/home', {
+            templateUrl: '../templates/home/homeView.min.html'
         })
         .otherwise({
-            redirectTo: '/working'
+            redirectTo: '/home'
         });
         
         $locationProvider.hashPrefix('!');

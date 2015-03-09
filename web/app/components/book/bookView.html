@@ -1,4 +1,4 @@
-<div layout="column" class="books_container">
+<div class="books_container">
     <div flex class="container_title" layout layout-align="center">
         <div> 
             BIBLIOTECA<strong>VIRTUAL</strong>
@@ -10,7 +10,7 @@
                 <form data-ng-submit="search()">
                     <div layout="row">
                         <div flex="90" class="search_box">
-                            <input type="text" data-ng-model="data" placeholder="Ingrese su busqueda" />
+                            <input type="text" data-ng-model="data" placeholder="Ingrese su búsqueda" />
                         </div>
                         <div flex>
                             <md-button type="submit" class="search_boton" aria-label="searchboton" >
@@ -19,6 +19,7 @@
                         </div>
                     </div>
                 </form>
+                <div data-ng-show="data">Buscar: {{data}}</div>
                 <div data-ng-show="scrollVisible">
                     loading...
                 </div>
@@ -32,10 +33,10 @@
             </div>
         </div>
     </div>
-    <div infinite-scroll="scrollActive()" infinite-scroll-distance="1" infinite-scroll-disabled="scrollVisible">
+    <div infinite-scroll="scrollActive('')" infinite-scroll-distance="1" infinite-scroll-disabled="scrollVisible">
         <div flex class="container_bookslist">
             <section layout="row" layout-wrap >
-                <article flex-gt-md="25" flex-gt-sm="33" flex-sm="50" layout layout-align="center start" data-ng-repeat="book in books">
+                <article flex-gt-md="25" flex-gt-sm="33" flex-sm="100" layout layout-align="center start" data-ng-repeat="book in books">
                     <div layout="column" class="bookslist_items">
                         <figure>
                             <img src="{{book.cover}}" />
@@ -46,7 +47,7 @@
                             </strong>
                         </div>
                         <div class="items_subname">
-                            {{book.year}}
+                             <i class="mdi mdi-play icono"></i>{{book.year}}
                         </div>
                     </div>
                 </article>
