@@ -10,7 +10,6 @@
                 var page = paginador;
                 var flag;
                 var search = '';
-
                 if(page === null && arg === undefined)
                     flag = true;
 
