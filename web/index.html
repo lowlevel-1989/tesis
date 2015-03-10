@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es" data-ng-app="BibliotecaVirtual">
-    <head data-ng-controller="Controller">
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
         <title>Biblioteca UJGH</title>
-        <meta name="fragment" content="!">
-        <meta name="description" content="{{ MetaInformation.metaDescription() }}">
+        <meta name="description" content="Encuentra todos tus libros aqui.">
 
         <!-- Dependencias -->
         <link rel="stylesheet" href="assets/css/angular-material.min.css">
@@ -18,7 +17,9 @@
     <body>
 
         <div data-ng-controller="Controller" data-ng-hide="loading">
-            <img src="assets/img/loading.gif" />
+            <figure>
+                <img src="assets/img/loading.gif" />
+            </figure>
         </div>
 
         <bl-header></bl-header>
