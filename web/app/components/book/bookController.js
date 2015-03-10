@@ -35,12 +35,10 @@
         $scope.scrollVisible = false;
         var books;
         $scope.scrollActive = function(arg){
-            console.log('inicia la funcion');
             if (!$scope.none){
                 $scope.scrollVisible = true;
                 var change = !$scope.change;
                 bookFactory.next(arg, change).then(function(data){
-                    console.log('entre');
                     if (!$scope.change)
                         books = data.results;
                     else
