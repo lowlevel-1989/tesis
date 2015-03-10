@@ -2,8 +2,8 @@
     angular.module('bookController', ['bookService','bookIndividualDirective'])
 
     .controller('bookController', [ 
-    '$scope', 'bookFactory',
-    function ($scope, bookFactory) {
+    '$scope', 'bookFactory', '$rootScope',
+    function ($scope, bookFactory, $rootScope) {
         
         //BookSingle
         $scope.bookShow = false;
@@ -24,25 +24,32 @@
         };
         //BookSingle
 
+
         //Scrolling
-        
+
+        $rootScope.$on('_change', function(event){ 
+            $scope.change = false;
+            $scope.none   = false;
+        });
+
         $scope.scrollVisible = false;
-        var change = false;
         var books;
-        var none = false;
         $scope.scrollActive = function(arg){
-            if (!none){
+            console.log('inicia la funcion');
+            if (!$scope.none){
                 $scope.scrollVisible = true;
-                bookFactory.next(arg).then(function(data){
-                    if (!change)
+                var change = !$scope.change;
+                bookFactory.next(arg, change).then(function(data){
+                    console.log('entre');
+                    if (!$scope.change)
                         books = data.results;
                     else
                         books = books.concat(data.results);
-                    change = true;
+                    $scope.change = true;
                     $scope.books = books;                
                     $scope.scrollVisible = false;
                     if (data.next === null)
-                        none = true;
+                        $scope.none = true;
                 });
             }
         };
@@ -57,8 +64,8 @@
             $scope.search = function () {
                 if (search !== $scope.data){
                     search = $scope.data;
-                    change = false;
-                    none   = false;
+                    $scope.change = false;
+                    $scope.none   = false;
                     $scope.scrollActive(search);
                 }
             };
