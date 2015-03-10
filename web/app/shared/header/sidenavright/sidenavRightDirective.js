@@ -4,7 +4,7 @@
     .directive('blSidenavright', function () {
         return {
             restrict: 'E',
-            templateUrl: '../templates/sidenavright/sidenavRightView.min.html'
+            templateUrl: '../templates/header/sidenavright/sidenavRightView.min.html'
         };
     });
 
