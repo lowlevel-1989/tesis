@@ -8,7 +8,7 @@ from author.models    import Author
 
 
 class Careers(models.Model):
-	name = models.CharField('Nombre', max_length=100, unique=True)
+	name = models.CharField('Carrera', max_length=100, unique=True)
 
 	class Meta:
 		verbose_name		= 'Carrera'
@@ -19,11 +19,11 @@ class Careers(models.Model):
 
 
 class Line(models.Model):
-	name = models.CharField('Nombre', max_length=100, unique=True)
+	name = models.CharField('Línea de investigación', max_length=100, unique=True)
 
 	class Meta:
-		verbose_name		= 'La línea de investigación'
-		verbose_name_plural	= 'La línea de investigación'
+		verbose_name		= 'Línea de investigación'
+		verbose_name_plural	= 'Línea de investigación'
 
 	def __unicode__(self):
 		return '%s' % self.name
