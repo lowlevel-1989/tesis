@@ -9,7 +9,7 @@ from publisher.models import Publisher
 
 
 class Brochure(models.Model):
-    id        = models.IntegerField    ( 'Registro',                            primary_key = True                                     )
+    id        = models.AutoField       ( 'Registro',                            primary_key = True                                     )
     title     = models.CharField       ( 'Titulo',               max_length=100                                                        )
     isbn      = models.CharField       (                         max_length=13                                                         )
     author    = models.ManyToManyField (              Author,                   verbose_name='Autores'                                 )

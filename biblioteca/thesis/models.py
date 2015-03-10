@@ -30,6 +30,7 @@ class Line(models.Model):
 
 
 class Thesis(models.Model):
+	id           = models.AutoField       ( 'Registro',                              primary_key = True                         )
 	title        = models.CharField       ( 'Titulo',                 max_length=100                                            )
 	author       = models.ManyToManyField (                Author,                   verbose_name='Autores'                     )
 	career       = models.ManyToManyField (                Careers,                  verbose_name='Carreras'                    )
