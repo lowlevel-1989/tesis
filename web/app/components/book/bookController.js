@@ -9,8 +9,18 @@
         $scope.bookShow = false;
 
         $scope.showBookInfo = function(book){
-           $scope.bookShow = true;
-           $scope.bookShowInfo = book;
+           if ($scope.bookShow !== true){
+                $scope.bookShow = true;
+                $scope.bookShowInfo = book;
+                console.log($scope.bookShow);
+            }else{
+                $scope.bookShow = false;
+                console.log($scope.bookShow);
+            }
+        };
+
+        $scope.showPrueba = function(){
+           console.log('hola');
         };
         //BookSingle
 

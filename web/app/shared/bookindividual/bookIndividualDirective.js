@@ -6,7 +6,8 @@
             restrict: 'E',
             templateUrl: '../templates/bookindividual/bookIndividualView.min.html',
             scope: {
-                bookcontent: '=booksingle'
+                bookcontent: '=booksingle',
+                bookshow: '=functionshow'
             }
         };
     });
