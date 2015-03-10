@@ -42,7 +42,16 @@
 								</div>
 							</div>
 							<div flex data-ng-if="bookcontent.is_public" class="link">
-								<span><a href="{{bookcontent.is_public}}" target="_blank">IR AL DOCUMENTO</a></span>
+								<span hide-sm hide-md>
+									<a href="{{bookcontent.is_public}}" target="_blank">
+										IR AL DOCUMENTO
+									</a>
+								</span>
+								<span hide-gt-md>
+									<a href="{{bookcontent.is_public}}">
+										IR AL DOCUMENTO
+									</a>
+								</span> 
 							</div>
 						</div>
 					</div>	
