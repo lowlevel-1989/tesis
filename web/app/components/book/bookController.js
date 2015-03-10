@@ -6,7 +6,12 @@
     function ($scope, bookFactory) {
         
         //BookSingle
-        $scope.hola="hola que ams";
+        $scope.bookShow = false;
+
+        $scope.showBookInfo = function(book){
+           $scope.bookShow = true;
+           $scope.bookShowInfo = book;
+        };
         //BookSingle
 
         //Scrolling
