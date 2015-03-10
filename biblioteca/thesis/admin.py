@@ -7,9 +7,9 @@ class CareersAdmin(admin.ModelAdmin):
 
 
 class ThesisAdmin(admin.ModelAdmin):
-	list_display      = ('title', 'career', 'year', 'public', 'portada', )
-	search_fields     = ('title', 'career', )
-	list_filter       = ('career', 'year', 'author__name', )
+	list_display      = ('title', 'career', 'line', 'year', 'public', 'portada', )
+	search_fields     = ('title', 'career', 'line', )
+	list_filter       = ('career', 'year', 'author__name', 'line', )
 	filter_horizontal = ('author', )
 
 
