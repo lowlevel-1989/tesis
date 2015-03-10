@@ -22,12 +22,12 @@
 
             var currentTab = $location.path();
 
-            function onClickTab(tab) {
-                currentTab = tab.url;
+            function onClickTab(url) {
+                currentTab = url;
             }
 
-            function isActiveTab(urlTab) {
-                return urlTab == currentTab;
+            function isActiveTab(url) {
+                return url == currentTab;
             }
 
             return {
