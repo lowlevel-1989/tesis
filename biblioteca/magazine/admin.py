@@ -3,7 +3,7 @@ from .models        import Magazine
 
 
 class MagazineAdmin(admin.ModelAdmin):
-	list_display      = ('title', 'isbn', 'year', 'ubication', 'portada', )
+	list_display      = ('id', 'title', 'isbn', 'year', 'ubication', 'portada', )
 	search_fields     = ('title', 'isbn', 'ubication')
 	list_filter       = ('year', 'ubication', 'author__name', )
 	filter_horizontal = ('author', )

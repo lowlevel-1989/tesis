@@ -12,7 +12,7 @@ class LineAdmin(admin.ModelAdmin):
 
 
 class ThesisAdmin(admin.ModelAdmin):
-	list_display      = ('title', 'line', 'year', 'public', 'portada', )
+	list_display      = ('id', 'title', 'line', 'year', 'public', 'portada', )
 	search_fields     = ('title', 'career__name', 'author__name', 'line__name', )
 	list_filter       = ('career__name', 'author__name', 'line__name', 'year', )
 	filter_horizontal = ('author', )
