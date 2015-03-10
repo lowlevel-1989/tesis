@@ -1,5 +1,5 @@
 (function(){
-    angular.module('bookController', ['bookService'])
+    angular.module('bookController', ['bookService','bookIndividualDirective'])
 
     .controller('bookController', [ 
     '$scope', 'bookFactory',

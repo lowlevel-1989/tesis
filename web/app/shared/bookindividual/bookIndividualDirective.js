@@ -4,7 +4,10 @@
     .directive('blBookindividual', function () {
         return {
             restrict: 'E',
-            templateUrl: '../templates/bookindividual/bookIndividualView.min.html'
+            templateUrl: '../templates/bookindividual/bookIndividualView.min.html',
+            scope: {
+                bookcontent: '=?'
+            }
         };
     });
 
