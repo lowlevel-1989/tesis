@@ -4,25 +4,22 @@ from .validators import validate_file_image
 
 from django.db        import models
 from author.models    import Author
-from publisher.models import Publisher 
 
-
-
-class Brochure(models.Model):
+class Magazine(models.Model):
     id        = models.IntegerField    ( 'Registro',                            primary_key = True                                     )
     title     = models.CharField       ( 'Titulo',               max_length=100                                                        )
     isbn      = models.CharField       (                         max_length=13                                                         )
     author    = models.ManyToManyField (              Author,                   verbose_name='Autores'                                 )
-    publisher = models.ForeignKey      (              Publisher,                verbose_name='Editorial'                               )
     ubication = models.CharField       ( 'Ubicación',            max_length=150                                                        )
+    vol       = models.IntegerField    ( 'Volumen'                                                                                     )
     year      = models.IntegerField    ( 'Año'                                                                                         )
     cover     = models.FileField       ( 'Portada',   upload_to='cover/%Y/%m/%d',     validators=[validate_file_image]                 )
     note      = models.TextField       ( 'Nota',                                                                            blank=True )
 
 
     class Meta:
-        verbose_name        = 'Folleto'
-        verbose_name_plural = 'Folletos'
+        verbose_name        = 'Revista'
+        verbose_name_plural = 'Revistas'
 
     def portada(self):
         return """

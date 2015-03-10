@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^',   include('thesis.urls'        )),
     url(r'^',   include('brochure.urls'      )),
     url(r'^',   include('law.urls'           )),
+    url(r'^',   include('magazine.urls'      )),
 )
 
 if settings.DEBUG:

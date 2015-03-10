@@ -11,4 +11,4 @@ class BrochureViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class    = BrochureSerializer
     filter_backends     = (filters.DjangoFilterBackend, filters.SearchFilter, )
     filter_fields       = ('id', 'ubication', 'publisher__name', 'author__name', )
-    search_fields       = ('title', 'dewey__description', 'publisher__name', 'isbn', 'ubication', )
+    search_fields       = ('title', 'publisher__name', 'isbn', 'ubication', )
