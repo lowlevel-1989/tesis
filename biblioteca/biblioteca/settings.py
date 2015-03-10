@@ -58,7 +58,7 @@ BASE_APPS = (
     'publisher',
     'book',
     'thesis',
-    'brochere',
+    'brochure',
     'law',
 )
 
