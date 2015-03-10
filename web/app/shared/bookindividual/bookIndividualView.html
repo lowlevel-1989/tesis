@@ -1,10 +1,26 @@
-<section>
-    <article flex>
-        {{bookcontent.title}}
-    </article>
-    <div>
-    	<md-button type="submit" class="backBooks" aria-label="backBooks" data-ng-click="bookshow('hola')">
-            <i class="mdi mdi-keyboard-backspace"></i>
-        </md-button>
+<div layout="row" layout layout-align="center">
+    <div flex="80">
+    	<section>
+		    <article flex>
+		        <div layout="row" class="bookshow_container" layout layout-align="center">
+					<div flex="30">
+						<figure>
+							<img src="{{bookcontent.cover}}" alt="bookshowsingle">
+						</figure>
+					</div>
+					<div flex>
+						{{bookcontent.title}}
+					</div>	
+
+		         </div>
+		    </article>
+		    <div>
+		    	<md-button type="submit" class="backBooks" aria-label="backBooks" data-ng-click="bookshow('hola')">
+		            <i class="mdi mdi-keyboard-backspace"></i>
+		        </md-button>
+		    </div>
+		</section>
     </div>
-</section>
+</div>
+
+
