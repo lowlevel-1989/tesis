@@ -58,6 +58,8 @@ BASE_APPS = (
     'publisher',
     'book',
     'thesis',
+    'brochere',
+    'law',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
