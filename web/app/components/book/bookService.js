@@ -6,12 +6,17 @@
 
             var paginador = api.url + 'books/';
 
-            function next(arg){
+            function next(arg, change){
                 var page = paginador;
                 var flag;
                 var search = '';
                 if(page === null && arg === undefined)
                     flag = true;
+
+                if (change){
+                    flag = false;
+                    page   = api.url + 'books/';
+                }
 
                 var deferred = $q.defer();
                 

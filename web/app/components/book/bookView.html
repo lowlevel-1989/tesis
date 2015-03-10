@@ -33,11 +33,11 @@
             </div>
         </div>
     </div>
-    <div infinite-scroll="scrollActive('')" infinite-scroll-distance="1" infinite-scroll-disabled="scrollVisible">
+    <div infinite-scroll="scrollActive()" infinite-scroll-distance="0" infinite-scroll-disabled="scrollVisible">
         <div flex class="container_bookslist">
-            <section layout="row" layout-wrap >
+            <section layout="row" layout-wrap data-ng-hide="bookShow">
                 <article flex-gt-md="25" flex-gt-sm="33" flex-sm="100" layout layout-align="center start" data-ng-repeat="book in books">
-                    <div layout="column" class="bookslist_items">
+                    <div layout="column" class="bookslist_items" data-ng-click="showBookInfo(book)">
                         <figure>
                             <img src="{{book.cover}}" />
                         </figure>
@@ -55,6 +55,7 @@
                     loading...
                 </div>
             </section>
+            <bl-bookindividual booksingle="bookShowInfo" functionshow="showBookInfo" data-ng-show="bookShow"></bl-bookindividual>
         </div>
     </div>
 </div>

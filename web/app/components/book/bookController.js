@@ -1,29 +1,49 @@
 (function(){
-    angular.module('bookController', ['bookService'])
+    angular.module('bookController', ['bookService','bookIndividualDirective'])
 
     .controller('bookController', [ 
-    '$scope', 'bookFactory',
-    function ($scope, bookFactory) {
+    '$scope', 'bookFactory', '$rootScope',
+    function ($scope, bookFactory, $rootScope) {
         
+        //BookSingle
+        $scope.bookShow = false;
+
+        $scope.showBookInfo = function(book){
+           if (!$scope.bookShow){
+                $scope.bookShow = true;
+                $scope.bookShowInfo = book;
+                console.log($scope.bookShow);
+            }else{
+                $scope.bookShow = false;
+                console.log($scope.bookShow);
+            }
+        };
+        //BookSingle
+
+
         //Scrolling
-        
+
+        $rootScope.$on('_change', function(event){ 
+            $scope.change = false;
+            $scope.none   = false;
+        });
+
         $scope.scrollVisible = false;
-        var change = false;
         var books;
-        var none = false;
         $scope.scrollActive = function(arg){
-            if (!none){
+            if (!$scope.none){
                 $scope.scrollVisible = true;
-                bookFactory.next(arg).then(function(data){
-                    if (!change)
+                var change = !$scope.change;
+                bookFactory.next(arg, change).then(function(data){
+                    if (!$scope.change)
                         books = data.results;
                     else
                         books = books.concat(data.results);
-                    change = true;
+                    $scope.change = true;
                     $scope.books = books;                
                     $scope.scrollVisible = false;
                     if (data.next === null)
-                        none = true;
+                        $scope.none = true;
                 });
             }
         };
@@ -38,8 +58,9 @@
             $scope.search = function () {
                 if (search !== $scope.data){
                     search = $scope.data;
-                    change = false;
-                    none   = false;
+                    $scope.bookShow = false;
+                    $scope.change = false;
+                    $scope.none   = false;
                     $scope.scrollActive(search);
                 }
             };

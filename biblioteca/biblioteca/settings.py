@@ -159,7 +159,7 @@ if DEBUG:
 
 ########## REST CONFIGURATION
 REST_FRAMEWORK = {
-    'PAGINATE_BY': 10,           # Default to 10
+    'PAGINATE_BY': 8,           # Default to 10
     'PAGINATE_BY_PARAM': 'size', # Allow client to override, using `?size=xxx`.
     'MAX_PAGINATE_BY': 30        # Maximum limit allowed when using `?size=xxx`.
 }

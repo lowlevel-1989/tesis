@@ -4,8 +4,6 @@
 
     var _API = 'http://formatcomtesis.com.ve/api/';
 
-    var _DESCRIPTION = 'Esta es la Biblioteca UJGH';
-
     var _SERVICES = [   
             
     ];
@@ -40,32 +38,8 @@
         };
     })
 
-    .factory('PageTitle', function() {
-        var title = 'Biblioteca Virtual';
-        return {
-            title: function() { return title; },
-            setTitle: function(newTitle) { title = newTitle; }
-        };
-    })
-
-    .factory('MetaInformation', function() {
-        var metaDescription = _DESCRIPTION;
-        return {
-            metaDescription: function() { return metaDescription; },
-            reset: function() {
-                metaDescription = '';
-            },
-            setMetaDescription: function(newMetaDescription) {
-                metaDescription = newMetaDescription;
-            }
-        };
-    })
-
-    .controller('Controller', ['$scope', 'PageTitle', 'MetaInformation', 
-    function ($scope, PageTitle, MetaInformation) {
-        $scope.PageTitle       = PageTitle;
-        $scope.MetaInformation = MetaInformation;
-        $scope.loading         = true;
+    .controller('Controller', ['$scope', function ($scope) {
+        $scope.loading = true;
     }]);
 
 })();
