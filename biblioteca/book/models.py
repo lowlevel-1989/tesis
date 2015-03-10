@@ -11,23 +11,24 @@ from dewey.models     import Dewey
 from publisher.models import Publisher 
 
 class Book(models.Model):
+    id        = models.IntegerField    ( 'Registro',                            primary_key = True                                     )
     title     = models.CharField       ( 'Titulo',               max_length=100                                                        )
     isbn      = models.CharField       (                         max_length=13                                                         )
-    dewey     = models.ForeignKey      (              Dewey                                                                            )
+    dewey     = models.ForeignKey      (              Dewey,                    verbose_name='Cota'                                    )
     author    = models.ManyToManyField (              Author,                   verbose_name='Autores'                                 )
     publisher = models.ForeignKey      (              Publisher,                verbose_name='Editorial'                               )
+    ubication = models.CharField       ( 'Ubicación',            max_length=150                                                        )
     pages     = models.IntegerField    ( 'Páginas'                                                                                     )
     year      = models.IntegerField    ( 'Año'                                                                                         )
     cover     = models.FileField       ( 'Portada',   upload_to='cover/%Y/%m/%d',     validators=[validate_file_image]                 )
     book_pdf  =        FileField       ( 'Libro pdf', upload_to='documents/%Y/%m/%d', validators=[validate_file_extension], blank=True )
+    note      = models.TextField       ( 'Nota',                                                                            blank=True )
     public    = models.BooleanField    ( 'Público',   default=False                                                                    )
+
 
     class Meta:
         verbose_name        = 'Libro'
         verbose_name_plural = 'Libros'
-
-    def pais(self):
-        return '%s' % self.publisher.country
 
     def portada(self):
         if self.public and self.book_pdf.url != settings.MEDIA_URL:
