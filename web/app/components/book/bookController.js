@@ -5,6 +5,10 @@
     '$scope', 'bookFactory',
     function ($scope, bookFactory) {
         
+        //BookSingle
+        $scope.hola="hola que ams";
+        //BookSingle
+
         //Scrolling
         
         $scope.scrollVisible = false;
