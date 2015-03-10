@@ -11,4 +11,4 @@ class LawViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class    = LawSerializer
     filter_backends     = (filters.DjangoFilterBackend, filters.SearchFilter, )
     filter_fields       = ('id', 'year', 'ubication', 'author__name', )
-    search_fields       = ('title', 'dewey__description', 'isbn')
+    search_fields       = ('title', 'dewey__description', 'isbn', )
