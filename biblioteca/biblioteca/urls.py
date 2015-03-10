@@ -11,6 +11,8 @@ urlpatterns = patterns('',
     url(r'^',   include('book.urls'          )),
     url(r'^',   include('publisher.urls'     )),
     url(r'^',   include('thesis.urls'        )),
+    url(r'^',   include('brochures.urls'     )),
+    url(r'^',   include('law.urls'           )),
 )
 
 if settings.DEBUG:
