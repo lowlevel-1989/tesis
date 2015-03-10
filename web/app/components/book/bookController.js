@@ -18,10 +18,6 @@
                 console.log($scope.bookShow);
             }
         };
-
-        $scope.showPrueba = function(){
-           console.log('hola');
-        };
         //BookSingle
 
 
@@ -62,6 +58,7 @@
             $scope.search = function () {
                 if (search !== $scope.data){
                     search = $scope.data;
+                    $scope.bookShow = false;
                     $scope.change = false;
                     $scope.none   = false;
                     $scope.scrollActive(search);

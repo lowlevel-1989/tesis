@@ -2,16 +2,16 @@
     <div flex="80">
     	<section>
 		    <article flex>
-		        <div layout="row" class="bookshow_container" layout layout-align="center">
-					<div flex="30" layout layout-align="center">
+		        <div layout="row" layout-sm="column" class="bookshow_container" layout layout-align="center">
+					<div flex="30" flex-sm="100" layout layout-align="center">
 						<figure>
 							<img src="{{bookcontent.cover}}" alt="bookshowsingle">
 						</figure>
 					</div>
-					<div flex>
+					<div flex flex-sm="100">
 						<div layout="column">
 							<div flex class="titulo">
-								
+								<i class="mdi mdi-play icono"></i><span>{{bookcontent.title}}</span>
 							</div>
 							<div flex>
 								
@@ -19,7 +19,7 @@
 							<div flex>
 								
 							</div>
-						</div>{{bookcontent.title}}
+						</div>
 					</div>	
 
 		         </div>
