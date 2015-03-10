@@ -9,7 +9,7 @@
         $scope.bookShow = false;
 
         $scope.showBookInfo = function(book){
-           if ($scope.bookShow !== true){
+           if (!$scope.bookShow){
                 $scope.bookShow = true;
                 $scope.bookShowInfo = book;
                 console.log($scope.bookShow);
