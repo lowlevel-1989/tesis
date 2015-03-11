@@ -18,12 +18,8 @@
                     'url': '/tesis'
                 },
                 {
-                    'title':'LEYES',
-                    'url': '/leyes'
-                },
-                {
-                    'title':'REVISTAS',
-                    'url': '/revistas'
+                    'title':'OTROS',
+                    'url': '/otros'
                 }
             ];
 

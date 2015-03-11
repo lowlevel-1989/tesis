@@ -12,13 +12,9 @@
             templateUrl: '../templates/tesis/tesisView.min.html',
             controller: 'tesisController'
         })
-        .when('/leyes', {
-            templateUrl: '../templates/leyes/leyesView.min.html',
+        .when('/otros', {
+            templateUrl: '../templates/otros/leyesView.min.html',
             controller: 'leyesController'
-        })
-        .when('/revistas', {
-            templateUrl: '../templates/revistas/revistasView.min.html',
-            controller: 'revistasController'
         })
         .when('/home', {
             templateUrl: '../templates/home/homeView.min.html'

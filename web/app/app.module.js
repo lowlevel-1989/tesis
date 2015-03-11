@@ -12,9 +12,7 @@
             'bookController',
             'homeController',
             'tesisController',
-            'leyesController',
-            'revistasController'
-
+            'leyesController'
     ];
 
     var _DIRECTIVES = [
