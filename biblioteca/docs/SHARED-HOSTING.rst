@@ -22,6 +22,8 @@ biblioteca/settings.py
 	change
 	line 19: DEBUG = False
 
+./manage.py collectstatic
+./manage.py syncdb
 
 touch ~/www/cgi-bin/tesis.py
 
@@ -44,3 +46,5 @@ htaccess
 		RewriteEngine on
 		RewriteRule ^cgi-bin/ - [L]
 		RewriteRule ^api/(.*)$ /cgi-bin/tesis.py/$1 [QSA,L]
+
+		Options -Indexes

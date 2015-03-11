@@ -10,5 +10,5 @@ class ThesisViewSet(viewsets.ReadOnlyModelViewSet):
     queryset            = Thesis.objects.all()
     serializer_class    = ThesisSerializer
     filter_backends     = (filters.DjangoFilterBackend, filters.SearchFilter, )
-    filter_fields       = ('id', 'title', 'author__name', 'year', )
-    search_fields       = ('title', 'career__name', )
+    filter_fields       = ('id', 'career__name', 'author__name', 'line__name', 'year', )
+    search_fields       = ('title', 'career__name', 'author__name', 'line__name', )
