@@ -58,6 +58,9 @@ BASE_APPS = (
     'publisher',
     'book',
     'thesis',
+    'brochure',
+    'law',
+    'magazine'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -144,7 +147,7 @@ MEDIA_ROOT  = '/home2/formatco/www/media/'
 STATIC_ROOT = '/home2/formatco/www/static/'
 
 TEMPLATE_DIRS = (
-    'home2/formatco/www/templates/',
+    '/home2/formatco/www/templates/',
 )
 
 if DEBUG:

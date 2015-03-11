@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from author.serializers import AuthorSerializer
 
-from .models import Thesis, Careers
+from .models import Thesis, Careers, Line
 
 
 class CareerSerializer(serializers.ModelSerializer):
@@ -10,10 +10,16 @@ class CareerSerializer(serializers.ModelSerializer):
 	    model = Careers
 
 
+class LineSerializer(serializers.ModelSerializer):
+	class Meta:
+	    model = Line
+
+
 class ThesisSerializer(serializers.ModelSerializer):
 
 	author = AuthorSerializer(many=True,  read_only=True)
-	career = CareerSerializer(many=False, read_only=True)
+	career = CareerSerializer(many=True,  read_only=True)
+	line   = LineSerializer(many=False,  read_only=True)
 
 	is_public = serializers.SerializerMethodField()
 
@@ -24,4 +30,4 @@ class ThesisSerializer(serializers.ModelSerializer):
 
 	class Meta:
 	    model  = Thesis
-	    fields = ('id', 'title', 'author', 'career', 'year', 'cover', 'abstract_pdf', 'is_public', ) 
+	    fields = ('id', 'title', 'author', 'career', 'line', 'year', 'cover', 'abstract_pdf', 'is_public', ) 

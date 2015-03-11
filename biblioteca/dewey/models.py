@@ -8,8 +8,8 @@ class Dewey(models.Model):
 	description = models.CharField ('Descripción', max_length=45                    )
 
 	class Meta:
-		verbose_name		= 'Dewey'
-		verbose_name_plural	= 'Dewey'
+		verbose_name		= 'Categoria'
+		verbose_name_plural	= 'Categorias'
 		ordering			= ('id',)
 
 	def __unicode__(self):
