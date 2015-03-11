@@ -22,15 +22,15 @@
 									<ul>
 										<li data-ng-repeat="auth in bookcontent.author">{{auth.name}}</li>
 									</ul>
-									<span data-ng-if="bookcontent.publisher">EDITORIAL:</span>
-									<ul data-ng-if="bookcontent.publisher">
-										<li>Nombre: {{bookcontent.publisher.name}}</li>
-									</ul>
+									<span data-ng-if="bookcontent.publisher">EDITORIAL: {{bookcontent.publisher.name}}</span>
 									<span data-ng-if="bookcontent.career">CARRERAS:</span>
 									<ul data-ng-if="bookcontent.career">
-										<li data-ng-repeat="career in bookcontent.career">Nombre:{{career.name}}</li>
+										<li data-ng-repeat="career in bookcontent.career">{{career.name}}</li>
 									</ul>
-									<span data-ng-if="bookcontent.line">LINEA: {{bookcontent.line.name}}</span>
+									<span data-ng-if="bookcontent.line">LINEA DE INVESTIGACION:</span>
+									<ul data-ng-if="bookcontent.line">
+										<li>{{bookcontent.line.name}}</li>
+									</ul>
 									<span data-ng-if="bookcontent.ubication">UBICACION: {{bookcontent.ubication}}</span>
 									<span data-ng-if="bookcontent.dewey">CATEGORIA:</span>
 									<ul data-ng-if="bookcontent.dewey">
