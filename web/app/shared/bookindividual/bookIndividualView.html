@@ -26,12 +26,6 @@
 									<ul data-ng-if="bookcontent.publisher">
 										<li>Nombre: {{bookcontent.publisher.name}}</li>
 									</ul>
-<<<<<<< HEAD
-									<span>UBICACION: {{bookcontent.ubication}}</span>
-									<span>CATEGORIA:</span>
-									<ul>
-										<li >Cota: {{bookcontent.dewey.id}}</li>
-=======
 									<span data-ng-if="bookcontent.career">CARRERAS:</span>
 									<ul data-ng-if="bookcontent.career">
 										<li data-ng-repeat="career in bookcontent.career">Nombre:{{career.name}}</li>
@@ -40,8 +34,7 @@
 									<span data-ng-if="bookcontent.ubication">UBICACION: {{bookcontent.ubication}}</span>
 									<span data-ng-if="bookcontent.dewey">CATEGORIA:</span>
 									<ul data-ng-if="bookcontent.dewey">
-										<li >Codigo: {{bookcontent.dewey.id}}</li>
->>>>>>> 3710eb374feb342e97f3f5b3852212e23ec126f5
+										<li >Cota: {{bookcontent.dewey.id}}</li>
 										<li >Descripcion: {{bookcontent.dewey.description}}</li>
 									</ul>
 									<span data-ng-if="bookcontent.pages">PAGINAS: {{bookcontent.pages}}</span>
