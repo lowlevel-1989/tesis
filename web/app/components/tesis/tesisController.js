@@ -12,11 +12,8 @@
            if (!$scope.bookShow){
                 $scope.bookShow = true;
                 $scope.bookShowInfo = book;
-                console.log($scope.bookShow);
-            }else{
+            }else
                 $scope.bookShow = false;
-                console.log($scope.bookShow);
-            }
         };
         //BookSingle
 
