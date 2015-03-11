@@ -10,7 +10,11 @@
 
     var _CONTROLLERS = [
             'bookController',
-            'homeController'
+            'homeController',
+            'tesisController',
+            'leyesController',
+            'revistasController'
+
     ];
 
     var _DIRECTIVES = [

@@ -1,0 +1,61 @@
+<div class="books_container">
+    <div flex class="container_title" layout layout-align="center">
+        <div> 
+            BIBLIOTECA<strong>VIRTUAL</strong>
+        </div>
+    </div>
+    <div flex>
+        <div layout="row" layout layout-align="center">
+            <div flex="60" flex-sm="95" class="container_search">
+                <form data-ng-submit="search()">
+                    <div layout="row">
+                        <div flex="90" class="search_box">
+                            <input type="text" data-ng-model="data" placeholder="Ingrese su búsqueda" />
+                        </div>
+                        <div flex>
+                            <md-button type="submit" class="search_boton" aria-label="searchboton" >
+                                <i class="mdi mdi-magnify icono"></i>
+                            </md-button>
+                        </div>
+                    </div>
+                </form>
+                <div data-ng-show="data">Buscar: {{data}}</div>
+                <div data-ng-show="scrollVisible">
+                    loading...
+                </div>
+            </div>
+        </div>
+    </div>
+    <div flex>
+        <div layout="row" layout layout-align="center">
+            <div flex="80" flex-sm="100" class="container_nombre">
+                <i class="mdi mdi-play icono"></i><span>TESIS</span>
+            </div>
+        </div>
+    </div>
+    <div infinite-scroll="scrollActive()" infinite-scroll-distance="0" infinite-scroll-disabled="scrollVisible">
+        <div flex class="container_bookslist">
+            <section layout="row" layout-wrap data-ng-hide="bookShow">
+                <article flex-gt-md="25" flex-gt-sm="33" flex-sm="100" layout layout-align="center start" data-ng-repeat="book in books">
+                    <div layout="column" class="bookslist_items" data-ng-click="showBookInfo(book)">
+                        <figure>
+                            <img src="{{book.cover}}" />
+                        </figure>
+                        <div class="items_name">
+                            <strong>
+                                {{book.title}}
+                            </strong>
+                        </div>
+                        <div class="items_subname">
+                             <i class="mdi mdi-play icono"></i>{{book.year}}
+                        </div>
+                    </div>
+                </article>
+                <div flex="100" layout layout-align="center" data-ng-show="scrollVisible">
+                    loading...
+                </div>
+            </section>
+            <bl-bookindividual booksingle="bookShowInfo" functionshow="showBookInfo" data-ng-show="bookShow"></bl-bookindividual>
+        </div>
+    </div>
+</div>
