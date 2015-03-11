@@ -10,12 +10,20 @@
                     'url': '/home'
                 },
                 {
+                    'title':'LIBROS',
+                    'url': '/books'
+                },
+                {
                     'title':'TESIS',
                     'url': '/tesis'
                 },
                 {
-                    'title':'LIBROS',
-                    'url': '/books'
+                    'title':'LEYES',
+                    'url': '/leyes'
+                },
+                {
+                    'title':'REVISTAS',
+                    'url': '/revistas'
                 }
             ];
 
