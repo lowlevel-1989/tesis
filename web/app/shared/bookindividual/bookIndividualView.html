@@ -22,22 +22,51 @@
 									<ul>
 										<li data-ng-repeat="auth in bookcontent.author">{{auth.name}}</li>
 									</ul>
-									<span>EDITORIAL:</span>
-									<ul>
+									<span data-ng-if="bookcontent.publisher">EDITORIAL:</span>
+									<ul data-ng-if="bookcontent.publisher">
 										<li>Nombre: {{bookcontent.publisher.name}}</li>
 									</ul>
-									<span>UBICACION: {{bookcontent.ubication}}</span>
-									<span>CATEGORIA:</span>
-									<ul>
+									<span data-ng-if="bookcontent.career">CARRERAS:</span>
+									<ul data-ng-if="bookcontent.career">
+										<li data-ng-repeat="career in bookcontent.career">Nombre:{{career.name}}</li>
+									</ul>
+									<span data-ng-if="bookcontent.line">LINEA: {{bookcontent.line.name}}</span>
+									<span data-ng-if="bookcontent.ubication">UBICACION: {{bookcontent.ubication}}</span>
+									<span data-ng-if="bookcontent.dewey">CATEGORIA:</span>
+									<ul data-ng-if="bookcontent.dewey">
 										<li >Codigo: {{bookcontent.dewey.id}}</li>
 										<li >Descripcion: {{bookcontent.dewey.description}}</li>
 									</ul>
-									<span>PAGINAS: {{bookcontent.pages}}</span>
-									<span>AÑO: {{bookcontent.year}}</span>
-									<span>ISBN: {{bookcontent.isbn}}</span>
+									<span data-ng-if="bookcontent.pages">PAGINAS: {{bookcontent.pages}}</span>
+									<span data-ng-if="bookcontent.year">AÑO: {{bookcontent.year}}</span>
+									<span data-ng-if="bookcontent.isbn">ISBN: {{bookcontent.isbn}}</span>
 								</div>
 							</div>
-							<div flex data-ng-if="bookcontent.is_public" class="link">
+							<div flex data-ng-if="bookcontent.abstract_pdf" class="link">
+								<span hide-sm hide-md>
+									<a href="{{bookcontent.abstract_pdf}}" target="_blank">
+										IR AL RESUMEN
+									</a>
+								</span>
+								<span hide-gt-md>
+									<a href="{{bookcontent.abstract_pdf}}" target="_blank">
+										DESCARGAR RESUMEN
+									</a>
+								</span> 
+							</div>
+							<div flex data-ng-if="bookcontent.is_public && bookcontent.abstract_pdf" class="link">
+								<span hide-sm hide-md>
+									<a href="{{bookcontent.is_public}}" target="_blank">
+										IR A LA TESIS
+									</a>
+								</span>
+								<span hide-gt-md>
+									<a href="{{bookcontent.is_public}}" target="_blank">
+										DESCARGAR TESIS
+									</a>
+								</span> 
+							</div>
+							<div flex data-ng-if="bookcontent.is_public && !bookcontent.abstract_pdf" class="link">
 								<span hide-sm hide-md>
 									<a href="{{bookcontent.is_public}}" target="_blank">
 										IR AL DOCUMENTO
