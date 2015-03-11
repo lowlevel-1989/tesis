@@ -43,7 +43,7 @@
                         </figure>
                         <div class="items_name">
                             <strong>
-                                {{book.title}}
+                                {{book.title}} <i data-ng-if="!book.is_public" class="mdi mdi-lock icono"></i>
                             </strong>
                         </div>
                         <div class="items_subname">
