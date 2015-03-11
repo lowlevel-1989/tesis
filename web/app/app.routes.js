@@ -13,8 +13,8 @@
             controller: 'tesisController'
         })
         .when('/otros', {
-            templateUrl: '../templates/otros/leyesView.min.html',
-            controller: 'leyesController'
+            templateUrl: '../templates/otros/otrosView.min.html',
+            controller: 'otrosController'
         })
         .when('/home', {
             templateUrl: '../templates/home/homeView.min.html'
