@@ -18,7 +18,7 @@
 
         $scope.cambio = function(){
         	otrosFactory.set($scope.select);
-        	$scope.search();
+        	$scope.search(1);
         };
 
         //Scrolling
@@ -55,8 +55,8 @@
 
             var search;
 
-            $scope.search = function () {
-                if (search !== $scope.data){
+            $scope.search = function (cambio) {
+                if (search !== $scope.data || cambio){
                     search = $scope.data;
                     $scope.bookShow = false;
                     $scope.change = false;
