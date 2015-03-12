@@ -18,10 +18,7 @@
 
         $scope.cambio = function(){
         	otrosFactory.set($scope.select);
-        	$scope.bookShow = false;
-            $scope.change = false;
-            $scope.none   = false;
-            $scope.scrollActive(search);
+        	$scope.search();
         };
 
         //Scrolling
