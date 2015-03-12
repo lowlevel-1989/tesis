@@ -10,7 +10,7 @@
                 <form data-ng-submit="search()">
                     <div layout="row">
 
-                            <select data-ng-model="select" data-ng-init="select='Revistas'">
+                            <select data-ng-model="select" data-ng-change="cambio()" data-ng-init="select='Revistas'">
                                 <option value="Folletos">Folletos</option>
                                 <option value="Revistas" data-ng-selected="true">Revistas</option>
                                 <option value="Leyes">Leyes</option>
