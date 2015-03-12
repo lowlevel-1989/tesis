@@ -4,8 +4,7 @@
     .controller('otrosController', [ 
     '$scope', 'otrosFactory', '$rootScope',
     function ($scope, otrosFactory, $rootScope) {
-        
-        
+    	
     }]);
 
 })();
