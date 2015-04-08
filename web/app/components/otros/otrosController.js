@@ -1,11 +1,10 @@
 (function(){
-    angular.module('bookController', ['bookService','bookIndividualDirective'])
+    angular.module('otrosController', ['otrosService'])
 
-    .controller('bookController', [ 
-    '$scope', 'bookFactory', '$rootScope',
-    function ($scope, bookFactory, $rootScope) {
-        
-        //BookSingle
+    .controller('otrosController', [ 
+    '$scope', 'otrosFactory', '$rootScope',
+    function ($scope, otrosFactory, $rootScope) {
+    	//BookSingle
         $scope.bookShow = false;
 
         $scope.showBookInfo = function(book){
@@ -17,6 +16,10 @@
         };
         //BookSingle
 
+        $scope.cambio = function(){
+        	otrosFactory.set($scope.select);
+        	$scope.search(1);
+        };
 
         //Scrolling
 
@@ -31,7 +34,7 @@
             if (!$scope.none){
                 $scope.scrollVisible = true;
                 var change = !$scope.change;
-                bookFactory.next(arg, change).then(function(data){
+                otrosFactory.next(arg, change).then(function(data){
                     if (!$scope.change)
                         books = data.results;
                     else
@@ -52,8 +55,8 @@
 
             var search;
 
-            $scope.search = function () {
-                if (search !== $scope.data){
+            $scope.search = function (cambio) {
+                if (search !== $scope.data || cambio){
                     search = $scope.data;
                     $scope.bookShow = false;
                     $scope.change = false;

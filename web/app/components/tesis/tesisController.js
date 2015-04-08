@@ -1,9 +1,9 @@
 (function(){
-    angular.module('bookController', ['bookService','bookIndividualDirective'])
+    angular.module('tesisController', ['tesisService','bookIndividualDirective'])
 
-    .controller('bookController', [ 
-    '$scope', 'bookFactory', '$rootScope',
-    function ($scope, bookFactory, $rootScope) {
+    .controller('tesisController', [ 
+    '$scope', 'tesisFactory', '$rootScope',
+    function ($scope, tesisFactory, $rootScope) {
         
         //BookSingle
         $scope.bookShow = false;
@@ -31,7 +31,7 @@
             if (!$scope.none){
                 $scope.scrollVisible = true;
                 var change = !$scope.change;
-                bookFactory.next(arg, change).then(function(data){
+                tesisFactory.next(arg, change).then(function(data){
                     if (!$scope.change)
                         books = data.results;
                     else

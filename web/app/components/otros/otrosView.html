@@ -9,7 +9,15 @@
             <div flex="60" flex-sm="95" class="container_search">
                 <form data-ng-submit="search()">
                     <div layout="row">
-                        <div flex="90" class="search_box">
+                        <div flex="15">
+                            <select data-ng-model="select" data-ng-change="cambio()" data-ng-init="select='Revistas'">
+                                <option value="Folletos">Folletos</option>
+                                <option value="Revistas" data-ng-selected="true">Revistas</option>
+                                <option value="Leyes">Leyes</option>
+                            </select> 
+                        </div>
+
+                        <div flex="75" class="search_box">
                             <input type="text" data-ng-model="data" placeholder="Ingrese su búsqueda" />
                         </div>
                         <div flex>
@@ -29,7 +37,7 @@
     <div flex>
         <div layout="row" layout layout-align="center">
             <div flex="80" flex-sm="100" class="container_nombre">
-                <i class="mdi mdi-play icono"></i><span>LIBROS</span>
+                <i class="mdi mdi-play icono"></i><span>{{select}}</span>
             </div>
         </div>
     </div>
@@ -43,7 +51,7 @@
                         </figure>
                         <div class="items_name">
                             <strong>
-                                {{book.title}} <i data-ng-if="!book.is_public" class="mdi mdi-lock icono"></i>
+                                {{book.title}}
                             </strong>
                         </div>
                         <div class="items_subname">

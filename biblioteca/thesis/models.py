@@ -34,7 +34,7 @@ class Thesis(models.Model):
 	title        = models.CharField       ( 'Titulo',                 max_length=100                                            )
 	author       = models.ManyToManyField (                Author,                   verbose_name='Autores'                     )
 	career       = models.ManyToManyField (                Careers,                  verbose_name='Carreras'                    )
-	line         = models.ForeignKey      (                Line,                     verbose_name='La línea de investigación'   )
+	line         = models.ForeignKey      (                Line,                     verbose_name='línea de investigación'   )
 	year         = models.IntegerField    ( 'Año'                                                                               )
 	cover        = models.FileField       ( 'Portada',     upload_to='cover/%Y/%m/%d',     validators=[validate_file_image]     )
 	thesis_pdf   = models.FileField       ( 'Tesis pdf',   upload_to='documents/%Y/%m/%d', validators=[validate_file_extension] )
