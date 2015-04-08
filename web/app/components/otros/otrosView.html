@@ -47,7 +47,7 @@
                 <article flex-gt-md="25" flex-gt-sm="33" flex-sm="100" layout layout-align="center start" data-ng-repeat="book in books">
                     <div layout="column" class="bookslist_items" data-ng-click="showBookInfo(book)">
                         <figure>
-                            <img src="{{book.cover}}" />
+                            <img data-ng-src="{{book.cover}}" />
                         </figure>
                         <div class="items_name">
                             <strong>
