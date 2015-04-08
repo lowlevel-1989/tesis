@@ -11,4 +11,4 @@ class BookViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class    = BookSerializer
     filter_backends     = (filters.DjangoFilterBackend, filters.SearchFilter, )
     filter_fields       = ('id', 'title', 'author__name', 'publisher__name', 'year', 'ubication', )
-    search_fields       = ('title', 'dewey__description', 'publisher__name', 'isbn', 'author__name', )
+    search_fields       = ('title', 'dewey__description', 'publisher__name', 'isbn', )
