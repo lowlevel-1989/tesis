@@ -2,7 +2,7 @@
 
     var _APP = 'BibliotecaVirtual';
 
-    var _API = 'http://formatcomtesis.com.ve/api/';
+    var _API = 'http://localhost:8000/';
 
     var _SERVICES = [   
             
