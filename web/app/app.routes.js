@@ -8,7 +8,7 @@
             templateUrl: '../templates/book/bookView.min.html',
             controller: 'bookController'
         })
-        .when('/tesis', {
+        .when('/tet', {
             templateUrl: '../templates/tesis/tesisView.min.html',
             controller: 'tesisController'
         })

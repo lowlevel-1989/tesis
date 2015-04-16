@@ -14,8 +14,8 @@
                     'url': '/books'
                 },
                 {
-                    'title':'TESIS',
-                    'url': '/tesis'
+                    'title':'TET',
+                    'url': '/tet'
                 },
                 {
                     'title':'OTROS',
