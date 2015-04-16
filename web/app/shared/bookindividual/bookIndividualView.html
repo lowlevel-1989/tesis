@@ -54,6 +54,11 @@
 									</a>
 								</span> 
 							</div>
+							<div flex data-ng-if="bookcontent.abstract_pdf  && !bookcontent.is_public" class="messege">
+								<span>
+									CONSULTE EL DOCUMENTO EN LA BIBLIOTECA
+								</span> 
+							</div>
 							<div flex data-ng-if="bookcontent.is_public && bookcontent.abstract_pdf" class="link">
 								<span hide-sm hide-md>
 									<a href="http://localhost:8000{{bookcontent.is_public}}" target="_blank">
@@ -80,7 +85,7 @@
 							</div>
 							<div flex data-ng-if="!bookcontent.is_public && !bookcontent.abstract_pdf" class="messege">
 								<span>
-									DEBE CONSULTAR EL LIBRO EN LA BIBLIOTECA
+									CONSULTE EL DOCUMENTO EN LA BIBLIOTECA
 								</span> 
 							</div>
 						</div>
@@ -88,13 +93,13 @@
 		         </div>
 		    </article>
 		    <div hide-sm hide-md>
-		    	<md-button type="submit" class="backBooks" aria-label="backBooks" data-ng-click="bookshow('hola')">
-		            <i class="mdi mdi-keyboard-backspace"></i>
+		    	<md-button type="submit" class="backBooksSm" aria-label="backBooks" data-ng-click="bookshow('hola')">
+		            <i class="mdi mdi-keyboard-backspace"></i> VOLVER
 		        </md-button>
 		    </div>
 		    <div hide-gt-md>
 		    	<md-button type="submit" class="backBooksSm" aria-label="backBooks" data-ng-click="bookshow('hola')">
-		            VOLVER
+		            <i class="mdi mdi-keyboard-backspace"></i>
 		        </md-button>
 		    </div>
 		</section>
