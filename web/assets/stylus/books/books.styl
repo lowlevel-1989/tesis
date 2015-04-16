@@ -12,15 +12,27 @@
 		border 1px solid titulo
 		background blanco
 		margin-bottom 40px
-		select
-			width 100%
-			min-height 39px
-			max-height 39px
-			border none
-			appearance none
-			-moz-appearance none
-			background none
-			border-right 1px solid titulo
+		.select_box
+			position relative
+			.select_icon
+				position absolute
+				top 12px
+				right 8px
+				z-index 1
+			select
+				position absolute
+				top 0
+				left 0
+				z-index 2
+				width 100%
+				height 39px
+				border none
+				appearance none
+				-moz-appearance none
+				-webkit-appearance none
+				background none
+				color titulo
+				border-right 1px solid titulo
 		.search_box
 			height 39px
 			border-right 1px solid titulo 
