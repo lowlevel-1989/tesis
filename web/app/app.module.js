@@ -2,7 +2,7 @@
 
     var _APP = 'BibliotecaVirtual';
 
-    var _API = 'http://localhost:8000/';
+    var _API = 'http://www.ujgh.edu.ve:8000/';
 
     var _SERVICES = [   
             
