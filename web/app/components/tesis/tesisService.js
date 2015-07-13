@@ -27,13 +27,18 @@
                     }else if (arg === '')
                         page   = api.url + 'thesis/';
 
-                    $http({
+                    var request = {
                         method: 'get',
-                        url: page,
-                        params: {
-                            "search": search
-                        }
-                    })
+                        url: page
+                    };
+
+                    if (search){
+                        request.params = {
+                            search: search
+                        };
+                    }
+
+                    $http(request)
 
                     .success(function(data) {
                         paginador = data.next;
