@@ -42,7 +42,6 @@
                     $http(request)
 
                     .success(function(data) {
-                        console.log(page);
                         paginador = data.next;
                         deferred.resolve(data);
                     });
