@@ -18,6 +18,7 @@
                     page   = api.url + 'books/';
                 }
 
+
                 var deferred = $q.defer();
                 
                 if (!flag){
@@ -27,15 +28,21 @@
                     }else if (arg === '')
                         page   = api.url + 'books/';
 
-                    $http({
+                    var request = {
                         method: 'get',
-                        url: page,
-                        params: {
-                            "search": search
-                        }
-                    })
+                        url: page
+                    };
+
+                    if (search){
+                        request.params = {
+                            search: search
+                        };
+                    }
+                    
+                    $http(request)
 
                     .success(function(data) {
+                        console.log(page);
                         paginador = data.next;
                         deferred.resolve(data);
                     });
