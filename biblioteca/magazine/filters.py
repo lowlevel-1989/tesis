@@ -14,6 +14,7 @@ class MagazineFilter(filters.SearchFilter):
          return queryset
 
       searchs = self.get_search_terms(request)
+      print searchs[0]
       for index in range(len(searchs)):
          searchs[index] = stem(searchs[index])
 
