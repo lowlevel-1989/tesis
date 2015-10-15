@@ -14,10 +14,10 @@ class MagazineFilter(filters.SearchFilter):
          return queryset
 
       searchs = self.get_search_terms(request)
-      print searchs[0]
       for index in range(len(searchs)):
          searchs[index] = stem(searchs[index])
 
+      print searchs[0]
       orm_lookups = [self.construct_search(six.text_type(search_field))
                      for search_field in search_fields]
 
