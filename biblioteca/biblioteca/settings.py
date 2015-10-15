@@ -146,16 +146,9 @@ MEDIA_URL   = '/media/'
 MEDIA_ROOT  = '/home2/formatco/www/django/media/'
 STATIC_ROOT = '/home2/formatco/www/django/static/'
 
-TEMPLATE_DIRS = (
-    '/home2/formatco/www/django/templates/',
-)
-
 if DEBUG:
     STATIC_ROOT = 'static/'
     MEDIA_ROOT  = 'media/'
-    TEMPLATE_DIRS = (
-        '../web/django/templates/',
-    )
 
 ########## END GENERAL CONFIGURATION
 
@@ -164,8 +157,10 @@ if DEBUG:
 REST_FRAMEWORK = {
     'PAGINATE_BY': 8,           # Default to 10
     'PAGINATE_BY_PARAM': 'size', # Allow client to override, using `?size=xxx`.
-    'MAX_PAGINATE_BY': 30        # Maximum limit allowed when using `?size=xxx`.
+    'MAX_PAGINATE_BY': 30,        # Maximum limit allowed when using `?size=xxx`.
+    'SEARCH_PARAM': 'q',
 }
+
 ########## END REST CONFIGURATION
 
 ########## CORS-HEADERS CONFIGURATION
